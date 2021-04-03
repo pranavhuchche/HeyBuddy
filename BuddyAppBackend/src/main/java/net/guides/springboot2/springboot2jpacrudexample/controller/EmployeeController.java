@@ -25,6 +25,7 @@ import net.guides.springboot2.springboot2jpacrudexample.model.Employee;
 @RequestMapping("/api/v1")
 public class EmployeeController {
 
+	
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees() {
 		return new ArrayList<>();
