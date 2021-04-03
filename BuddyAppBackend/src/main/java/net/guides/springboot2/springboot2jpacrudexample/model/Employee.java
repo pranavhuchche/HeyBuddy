@@ -1,14 +1,5 @@
 package net.guides.springboot2.springboot2jpacrudexample.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "employees")
 public class Employee {
 
 	private long id;
@@ -26,8 +17,6 @@ public class Employee {
 		this.emailId = emailId;
 	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
 		return id;
 	}
@@ -35,7 +24,6 @@ public class Employee {
 		this.id = id;
 	}
 	
-	@Column(name = "first_name", nullable = false)
 	public String getFirstName() {
 		return firstName;
 	}
@@ -43,7 +31,6 @@ public class Employee {
 		this.firstName = firstName;
 	}
 	
-	@Column(name = "last_name", nullable = false)
 	public String getLastName() {
 		return lastName;
 	}
@@ -51,7 +38,6 @@ public class Employee {
 		this.lastName = lastName;
 	}
 	
-	@Column(name = "email_address", nullable = false)
 	public String getEmailId() {
 		return emailId;
 	}
