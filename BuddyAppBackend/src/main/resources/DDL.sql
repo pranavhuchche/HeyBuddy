@@ -1,0 +1,12 @@
+DROP OWNED BY heyBuddy CASCADE;
+DROP USER IF EXISTS heyBuddy;
+CREATE USER heyBuddy;
+ALTER USER heyBuddy WITH encrypted password 'heyBuddy';
+ALTER USER heyBuddy WITH superuser;
+
+DROP SCHEMA if EXISTS heyBuddy CASCADE;
+CREATE SCHEMA if NOT EXISTS heyBuddy AUTHORIZATION heyBuddy;
+ALTER SCHEMA heyBuddy OWNER TO heyBuddy;
+
+DROP SEQUENCE IF EXISTS heyBuddy.seqIID CASCADE;
+CREATE SEQUENCE heyBuddy.seqIID start 1000;
