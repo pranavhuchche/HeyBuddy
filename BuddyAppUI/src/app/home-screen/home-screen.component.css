@@ -1,0 +1,97 @@
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.app-home-screen {
+  width: 100%;
+  height: 100%;
+}
+.homeScreenView {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #7b50b4;
+}
+
+.homeScreenContainer {
+  overflow: hidden;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+  background-color: white;
+  margin: 20px;
+  border-radius: 7px;
+}
+
+.homeScreenTabGroup {
+  height: 100%;
+  width: 100%;
+}
+
+.matTab {
+  height: 100%;
+  width: 100%;}
+
+.matTabGroup {
+  height: 100%;
+  width: 100%;
+}
+/*
+.leftSideNavigationContainer {
+  width: 200px;
+  height: 100%;
+}*/
+#tabGroup{
+  width: 100%;
+  height: 100%;
+}
+
+:host ::ng-deep .mat-tab-body-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.homeScreenHeader {
+  height: 20px;
+  width: 100%;
+}
+
+.leftSideNavigationContainer {
+  width: 100%;
+  height: calc(100% - 20px);
+}
+.example-container {
+  width: 100%;
+  height: 100%;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
+
+.navigationToggleOpen {
+  padding-left: 190px;
+}
+.navigationToggleClose{
+
+}
+.cardsContainer {
+  height: calc(100% - 100px);
+  margin: 5px 5px 0 5px;
+}
+
+.listCard {
+  border: 1px solid #c4bcbc;
+  margin-bottom: 5px;
+}

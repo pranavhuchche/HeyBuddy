@@ -8,6 +8,24 @@ import { Observable } from 'rxjs';
 export class EmployeeService {
 
   private baseUrl = 'http://localhost:8080/springboot-crud-rest/api/v1/employees';
+  records = [
+    {
+      "id" : 1,
+      "name" : "Rahul",
+    },
+    {
+      "id" : 2,
+      "name" : "Pranav",
+    },
+    {
+      "id" : 3,
+      "name" : "Vannya",
+    },
+    {
+      "id" : 4,
+      "name" : "Mrunali",
+    }
+  ];
 
   constructor(private http: HttpClient) { }
 
@@ -29,5 +47,9 @@ export class EmployeeService {
 
   getEmployeesList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
+  }
+
+  getListData() {
+    return this.records;
   }
 }

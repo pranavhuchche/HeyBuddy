@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c241d2-3512-4741-8de6-2c64deeb3e62" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home-screen/home-screen.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-employee/create-employee.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/create-employee/create-employee.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-employee/create-employee.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/create-employee/create-employee.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-employee/create-employee.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/create-employee/create-employee.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-employee/create-employee.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-employee/create-employee.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/home-screen/home-screen.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-employee/create-employee.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/home-screen/home-screen.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-employee/create-employee.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/home-screen/home-screen.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/employee.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,61 +24,65 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.component.ts">
+        <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="102">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="49" />
+              <folding>
+                <element signature="n#div#0;n#mat-tab#0;n#mat-tab-group#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.module.ts">
+        <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="561">
+              <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.component.html">
+        <entry file="file://$PROJECT_DIR$/app.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create-employee/create-employee.component.html">
+        <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#form#0;n#div#0;n#!!top" />
-                <element signature="n#div#1;n#form#0;n#div#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create-employee/create-employee.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+            <state relative-caret-position="-141">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/employee.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,6 +102,16 @@
       <find>BrowserAnimationsModule</find>
       <find>MatSidenavModule</find>
       <find>Router</find>
+      <find>max</find>
+      <find>background-color</find>
+      <find>example-sidenav-content</find>
+      <find>HttpClient</find>
+      <find>homeScreenTabGroup</find>
+      <find>mat-tab-body-wrapper</find>
+      <find>mat-tab-body</find>
+      <find>header</find>
+      <find>homeScreenHeader</find>
+      <find>leftSideNavigationContainer</find>
     </findStrings>
     <dirStrings>
       <dir>D:\project\Angular8-SpringBoot-CRUD-Tutorial-master\angular8-springboot-client\src\app\create-employee</dir>
@@ -111,12 +124,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app.component.ts" />
-        <option value="$PROJECT_DIR$/app.component.css" />
         <option value="$PROJECT_DIR$/create-employee/create-employee.component.css" />
-        <option value="$PROJECT_DIR$/app.component.html" />
         <option value="$PROJECT_DIR$/create-employee/create-employee.component.ts" />
         <option value="$PROJECT_DIR$/create-employee/create-employee.component.html" />
+        <option value="$PROJECT_DIR$/home-screen/home-screen.html" />
+        <option value="$PROJECT_DIR$/home-screen/home-screen.css" />
+        <option value="$PROJECT_DIR$/app.component.html" />
+        <option value="$PROJECT_DIR$/employee.service.ts" />
+        <option value="$PROJECT_DIR$/home-screen/home-screen.component.ts" />
         <option value="$PROJECT_DIR$/app.module.ts" />
+        <option value="$PROJECT_DIR$/home-screen/home-screen.component.html" />
+        <option value="$PROJECT_DIR$/app.component.css" />
+        <option value="$PROJECT_DIR$/home-screen/home-screen.component.css" />
       </list>
     </option>
   </component>
@@ -132,7 +151,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,17 +161,18 @@
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="create-employee" type="462c0819:PsiDirectoryNode" />
+              <item name="employee-list" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="employee-list" type="462c0819:PsiDirectoryNode" />
+              <item name="home-screen" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -187,20 +206,22 @@
       <workItem from="1617112200730" duration="3460000" />
       <workItem from="1617153594484" duration="654000" />
       <workItem from="1617397768452" duration="6942000" />
+      <workItem from="1617416802754" duration="28136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11056000" />
+    <option name="totallyTimeSpent" value="39192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2247191" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -220,25 +241,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/employee-list/employee-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/employee-list/employee-list.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-employee/create-employee.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -271,23 +274,6 @@
     <entry file="file://$PROJECT_DIR$/employee.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/employee.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/employee-details/employee-details.component.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -311,9 +297,6 @@
     <entry file="file://$PROJECT_DIR$/employee-list/employee-list.component.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/update-employee/update-employee.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -324,52 +307,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create-employee/create-employee.component.css">
+    <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state>
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create-employee/create-employee.component.ts">
+    <entry file="file://$PROJECT_DIR$/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../node_modules/rxjs/internal/Observable.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-801">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/employee-list/employee-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="18" />
           <folding>
-            <element signature="n#style#0;n#h2#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#92#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create-employee/create-employee.component.html">
+    <entry file="file://$PROJECT_DIR$/employee.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state relative-caret-position="63">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#form#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#form#0;n#div#0;n#!!top" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="250">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="49" />
+          <folding>
+            <element signature="n#div#0;n#mat-tab#0;n#mat-tab-group#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
         </state>
       </provider>
     </entry>
