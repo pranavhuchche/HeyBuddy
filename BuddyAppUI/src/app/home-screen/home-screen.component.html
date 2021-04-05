@@ -1,0 +1,32 @@
+<div class="homeScreenView">
+  <div class="homeScreenContainer">
+    <div class="homeScreenTabGroup">
+      <mat-tab-group class="matTabGroup" id="tabGroup">
+        <mat-tab class="matTab" label="Home" color="primary">
+          <div class="homeScreenHeader">
+            <mat-icon class="navigationToggleOpen" *ngIf="!showFiller" aria-hidden="false" (click)="drawer.toggle(); showFiller = !showFiller">swap_horiz</mat-icon>
+            <mat-icon class="navigationToggleClose" *ngIf="showFiller" (click)="drawer.toggle(); showFiller = !showFiller">swap_horiz</mat-icon>
+          </div>
+          <div class="leftSideNavigationContainer">
+            <mat-drawer-container class="example-container" autosize>
+              <mat-drawer #drawer class="example-sidenav" mode="side" opened="!showFiller">
+                <p>Auto-resizing sidenav</p>
+                <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+                <button (click)="showFiller = !showFiller" mat-raised-button>
+                  Toggle extra text
+                </button>
+              </mat-drawer>
+                <div class="cardsContainer">
+                  <mat-card class="listCard" *ngFor="let record of records;" (click)="showAlert(record.name)">{{record.name}}
+                  </mat-card>
+                </div>
+            </mat-drawer-container>
+          </div>
+        </mat-tab>
+        <mat-tab label="About"></mat-tab>
+        <mat-tab label="Gallery"></mat-tab>
+        <mat-tab label="Contact"></mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

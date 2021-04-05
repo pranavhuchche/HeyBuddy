@@ -2,20 +2,22 @@ import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
-  selector: 'app-create-employee',
-  templateUrl: './create-employee.component.html',
-  styleUrls: ['./create-employee.component.css']
+  selector: 'app-home-screen',
+  templateUrl: './home-screen.component.html',
+  styleUrls: ['./home-screen.component.css']
 })
-export class CreateEmployeeComponent implements OnInit {
+export class HomeScreenComponent implements OnInit {
 
   employee: Employee = new Employee();
   submitted = false;
+  records = [];
 
   constructor(private employeeService: EmployeeService,
-    private router: Router) { }
+    private router: Router) {
+    this.getList();
+  }
 
   ngOnInit() {
   }
@@ -42,5 +44,13 @@ export class CreateEmployeeComponent implements OnInit {
 
   gotoList() {
     this.router.navigate(['/employees']);
+  }
+
+  getList() {
+    this.records = this.employeeService.getListData();
+  }
+
+  showAlert(name) {
+    alert(name);
   }
 }
