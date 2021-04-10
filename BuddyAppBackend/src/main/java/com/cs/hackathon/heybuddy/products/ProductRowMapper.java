@@ -5,6 +5,8 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
+import com.cs.hackathon.heybuddy.products.Product.ListingType;
+
 public class ProductRowMapper implements RowMapper<Product> {
 
 	@Override
@@ -17,7 +19,9 @@ public class ProductRowMapper implements RowMapper<Product> {
 		product.setCost_from(rs.getLong(5));
 		product.setCost_to(rs.getLong(6));
 		product.setStatus(rs.getBoolean(7));
-		product.setUsername(rs.getString(8));
+		product.setListingDate(rs.getDate(8));
+		product.setListingType(ListingType.valueOf(rs.getInt(9)));
+		product.setUsername(rs.getString(10));
 		return product;
 	}
 

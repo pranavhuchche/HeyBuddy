@@ -1,5 +1,7 @@
 package com.cs.hackathon.heybuddy.products;
 
+import java.sql.Date;
+
 public class Product {
 	
 	private long productId;
@@ -9,6 +11,8 @@ public class Product {
 	private long cost_from;
 	private long cost_to;
 	private boolean status;
+	private Date listingDate;
+	private ListingType listingType;
 	private String username;
 	
 	public long getProductId() {
@@ -59,7 +63,19 @@ public class Product {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
+	public Date getListingDate() {
+		return listingDate;
+	}
+	public void setListingDate(Date listingDate) {
+		this.listingDate = listingDate;
+	}
+	public ListingType getListingType() {
+		return listingType;
+	}
+	public void setListingType(ListingType listingType) {
+		this.listingType = listingType;
+	}
+
 	public enum ListingType {
 
 		UNDEFINED, SELL, BUY;
