@@ -59,4 +59,15 @@ public class Product {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
+	public enum ListingType {
+
+		UNDEFINED, SELL, BUY;
+		
+		private static final ListingType[] values = values();
+
+	    public static ListingType valueOf(int ordinal) {
+	      return values[ordinal];
+	    }
+	}
 }

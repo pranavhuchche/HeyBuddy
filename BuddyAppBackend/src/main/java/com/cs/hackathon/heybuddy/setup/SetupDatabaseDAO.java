@@ -25,8 +25,8 @@ public class SetupDatabaseDAO {
 		Resource resourceProducts = new ClassPathResource("ProductsDDL.sql");
 
 		ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
-		databasePopulator.addScripts(resourceSchemaCreation, resourceUsers,
-		resourceProducts); databasePopulator.execute(dataSource);
+		databasePopulator.addScripts(resourceSchemaCreation, resourceUsers, resourceProducts);
+		databasePopulator.execute(dataSource);
 	}
 
 	public void executeSqlScript(Resource resource) throws SQLException {

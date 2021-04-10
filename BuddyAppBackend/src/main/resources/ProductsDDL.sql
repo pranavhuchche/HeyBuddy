@@ -9,4 +9,6 @@ cost_from NUMERIC ( 2 ),
 cost_to NUMERIC ( 2 ),
 --payment options,
 status BOOLEAN,
+listing_date DATE,
+listing_type smallint,
 username VARCHAR ( 50 ) REFERENCES heybuddy.users (username));
