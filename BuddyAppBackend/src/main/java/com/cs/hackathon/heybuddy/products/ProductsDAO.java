@@ -1,6 +1,5 @@
 package com.cs.hackathon.heybuddy.products;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +17,12 @@ public class ProductsDAO {
 		return jdbcTemplate.queryForObject(query, new Object[] { id }, new ProductRowMapper());
 	}
 
-	protected List<Product> getAllProducts(GetProductsRequestModel model) throws Exception {
+	protected List<Product> getAllProducts(IGetProductsRequestModel model) throws Exception {
 		String searchText = model.getSearchText();
 		Integer listingType = model.getListingType();
 		String sortOrder = "desc".equals(model.getSortOrder()) ? "desc" : "asc";
 		StringBuilder query = new StringBuilder("Select * from heybuddy.products pr WHERE 1=1");
-		if (searchText != null && "".equals(searchText)) {
+		if (searchText != null && !"".equals(searchText)) {
 			query.append(" AND (pr.product_name ilike '%" + searchText + "%' OR pr.description ilike '%" + searchText + "%')");
 		}
 		if (listingType != null && listingType != 0) {
@@ -43,7 +42,7 @@ public class ProductsDAO {
 						+ product.getCost_from() + "," 
 						+ product.getCost_to() + ","
 						+ product.isStatus() + ",'" 
-						+ LocalDate.now() + "'," 
+						+ product.getListingDate() + "'," 
 						+ product.getListingType().ordinal() + ",'" 
 						+ product.getUsername() + "'" 
 						+ ") RETURNING *");

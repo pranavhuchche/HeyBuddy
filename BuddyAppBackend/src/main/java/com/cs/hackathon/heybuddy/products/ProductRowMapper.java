@@ -19,7 +19,7 @@ public class ProductRowMapper implements RowMapper<Product> {
 		product.setCost_from(rs.getLong(5));
 		product.setCost_to(rs.getLong(6));
 		product.setStatus(rs.getBoolean(7));
-		product.setListingDate(rs.getDate(8));
+		product.setListingDate(rs.getLong(8));
 		product.setListingType(ListingType.valueOf(rs.getInt(9)));
 		product.setUsername(rs.getString(10));
 		return product;

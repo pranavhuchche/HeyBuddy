@@ -15,8 +15,12 @@ public class GetProductsService {
 		return productsDAO.getProductFromId(id);
 	}
 	
-	protected List<Product> getAllProducts(GetProductsRequestModel model) throws Exception {
-		return productsDAO.getAllProducts(model);
+	protected IGetProductsResponseModel getAllProducts(IGetProductsRequestModel model) throws Exception {
+		IGetProductsResponseModel returnModel = new GetProductsResponseModel();
+		List<Product> allProducts = productsDAO.getAllProducts(model);
+		returnModel.setProducts(allProducts);
+		returnModel.setTotalContent((long) allProducts.size());
+		return returnModel;
 	}
 
 }
