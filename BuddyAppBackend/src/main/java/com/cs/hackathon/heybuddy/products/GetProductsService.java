@@ -15,8 +15,8 @@ public class GetProductsService {
 		return productsDAO.getProductFromId(id);
 	}
 	
-	protected List<Product> getAllProducts() throws Exception {
-		return productsDAO.getAllProducts();
+	protected List<Product> getAllProducts(GetProductsRequestModel model) throws Exception {
+		return productsDAO.getAllProducts(model);
 	}
 
 }

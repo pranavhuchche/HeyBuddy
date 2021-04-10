@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,8 +20,8 @@ public class GetProductsController {
 		return getProductsService.getProductById(id);
 	}
 	
-	@GetMapping("/getproducts/all")
-	public List<Product> getAllProducts() throws Exception {
-		return getProductsService.getAllProducts();
+	@PostMapping("/getproducts/all")
+	public List<Product> getAllProducts(@RequestBody GetProductsRequestModel model) throws Exception {
+		return getProductsService.getAllProducts(model);
 	}
 }
