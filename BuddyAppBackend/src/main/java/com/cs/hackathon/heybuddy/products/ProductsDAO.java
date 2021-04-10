@@ -6,6 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+/**
+ * This class will have all method related to listings APIs
+ * 
+ * @author Vannya, Jamil
+ *
+ */
 @Component
 public class ProductsDAO {
 
@@ -34,19 +40,33 @@ public class ProductsDAO {
 
 	protected Product createNewProduct(Product product) throws Exception {
 		StringBuffer query = new StringBuffer(
-				"INSERT INTO heybuddy.products( product_name, description, mobile_number, cost_from, cost_to, status, listing_date, listing_type, username)"
-						+ "	VALUES ('" 
-						+ product.getProductName() + "','" 
-						+ product.getDescription() + "','"
-						+ product.getMobileNumber() + "'," 
-						+ product.getCost_from() + "," 
-						+ product.getCost_to() + ","
-						+ product.isStatus() + ",'" 
-						+ product.getListingDate() + "'," 
-						+ product.getListingType().ordinal() + ",'" 
-						+ product.getUsername() + "'" 
-						+ ") RETURNING *");
+				"INSERT INTO heybuddy.products( product_name, description, mobile_number, cost_from, cost_to, status, listing_date, listing_type, username)");
+		query.append(" VALUES ('");
+		query.append(product.getProductName() + "','");
+		query.append(product.getDescription() + "','");
+		query.append(product.getMobileNumber() + "',");
+		query.append(product.getCost_from() + ",");
+		query.append(product.getCost_to() + ",");
+		query.append(product.isStatus() + ",'");
+		query.append(product.getListingDate() + "',");
+		query.append(product.getListingType().ordinal() + ",'");
+		query.append(product.getUsername() + "'");
+		query.append(") RETURNING *");
+
 		return jdbcTemplate.queryForObject(query.toString(), null, new ProductRowMapper());
 
+	}
+
+	
+	/**This method will set status of product to false 
+	 * if user this  call removeProduct API
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	protected Long removeProduct(Long id) throws Exception {
+		String query = "UPDATE heybuddy.products SET status = false WHERE product_id = "+ id;
+		jdbcTemplate.execute(query);
+		return id;
 	}
 }
