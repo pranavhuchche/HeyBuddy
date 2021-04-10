@@ -1,12 +1,12 @@
-DROP OWNED BY heyBuddy CASCADE;
-DROP USER IF EXISTS heyBuddy;
-CREATE USER heyBuddy;
-ALTER USER heyBuddy WITH encrypted password 'heyBuddy';
-ALTER USER heyBuddy WITH superuser;
+SELECT 'DROP OWNED BY heybuddy CASCADE' FROM pg_roles WHERE rolname = 'heybuddy';
+DROP USER IF EXISTS heybuddy;
+CREATE USER heybuddy;
+ALTER USER heybuddy WITH encrypted password 'heybuddy';
+ALTER USER heybuddy WITH superuser;
 
-DROP SCHEMA if EXISTS heyBuddy CASCADE;
-CREATE SCHEMA if NOT EXISTS heyBuddy AUTHORIZATION heyBuddy;
-ALTER SCHEMA heyBuddy OWNER TO heyBuddy;
+DROP SCHEMA if EXISTS heybuddy CASCADE;
+CREATE SCHEMA if NOT EXISTS heybuddy AUTHORIZATION heybuddy;
+ALTER SCHEMA heybuddy OWNER TO heybuddy;
 
-DROP SEQUENCE IF EXISTS heyBuddy.seqIID CASCADE;
-CREATE SEQUENCE heyBuddy.seqIID start 1000;
+DROP SEQUENCE IF EXISTS heybuddy.seqIID CASCADE;
+CREATE SEQUENCE heybuddy.seqIID start 1000;

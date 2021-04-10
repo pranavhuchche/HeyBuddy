@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS heyBuddy.users;
-CREATE TABLE heyBuddy.users
+DROP TABLE IF EXISTS heybuddy.users;
+CREATE TABLE heybuddy.users
 (username VARCHAR ( 50 ) PRIMARY KEY,
 name VARCHAR ( 100 ),
 dob DATE,

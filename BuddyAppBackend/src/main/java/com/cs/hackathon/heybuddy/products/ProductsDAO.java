@@ -13,12 +13,12 @@ public class ProductsDAO {
     private JdbcTemplate jdbcTemplate;
 
 	protected Product getProductFromId(long id) throws Exception {
-		String query = "SELECT * FROM heyBuddy.products WHERE product_id = ?";
+		String query = "SELECT * FROM heybuddy.products WHERE product_id = ?";
 		return jdbcTemplate.queryForObject(query, new Object[] { id }, new ProductRowMapper());
 	}
 	
 	protected List<Product> getAllProducts() throws Exception {
-		String query = "SELECT * FROM heyBuddy.products";
+		String query = "SELECT * FROM heybuddy.products";
 		return jdbcTemplate.query(query, new ProductRowMapper());
 	}
 }
