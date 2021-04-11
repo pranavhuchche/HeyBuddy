@@ -8,4 +8,5 @@ mobile_number VARCHAR ( 20 ),
 desk_location VARCHAR ( 10 ),
 email VARCHAR ( 50 ),
 --profile_picture,
-hobbies VARCHAR ( 100 ));
+hobbies VARCHAR ( 100 ),
+password VARCHAR ( 100 ));

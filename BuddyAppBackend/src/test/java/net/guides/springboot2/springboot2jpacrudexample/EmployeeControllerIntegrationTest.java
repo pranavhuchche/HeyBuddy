@@ -17,6 +17,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 
+import com.cs.hackathon.heybuddy.Application;
+
 import net.guides.springboot2.springboot2jpacrudexample.model.Employee;
 
 @RunWith(SpringRunner.class)
