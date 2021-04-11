@@ -27,7 +27,7 @@ public class ProductsDAO {
 		String searchText = model.getSearchText();
 		Integer listingType = model.getListingType();
 		String sortOrder = "desc".equals(model.getSortOrder()) ? "desc" : "asc";
-		StringBuilder query = new StringBuilder("Select * from heybuddy.products pr WHERE 1=1");
+		StringBuilder query = new StringBuilder("Select * from heybuddy.products pr WHERE pr.status = true");
 		if (searchText != null && !"".equals(searchText)) {
 			query.append(" AND (pr.product_name ilike '%" + searchText + "%' OR pr.description ilike '%" + searchText + "%')");
 		}
