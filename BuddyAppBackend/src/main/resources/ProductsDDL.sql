@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS heybuddy.products;
 CREATE TABLE heybuddy.products
-(product_id serial PRIMARY KEY,
+(product_id bigint default nextval('heybuddy.seqIID') PRIMARY KEY,
 product_name VARCHAR ( 50 ),
 description VARCHAR ( 200 ),
 --images,
