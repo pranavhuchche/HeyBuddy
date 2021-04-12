@@ -1,6 +1,6 @@
 export class FindRide {
-  pickup: string;
-  dropoff: string;
-  dateTime: string;
-  numberOfSeats: number;
+  vehicleType: string;
+  pickUpLocation: string;
+  dropOffLocation: string;
+  noOfSeats: number;
 }

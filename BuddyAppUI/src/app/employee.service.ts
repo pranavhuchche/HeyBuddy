@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {OfferRide} from './carpool/offer-ride';
+import {FindRide} from './carpool/find-ride';
 
 @Injectable({
   providedIn: 'root'
@@ -50,8 +51,19 @@ export class EmployeeService {
 
   submitRide(offerRide: OfferRide) {
     offerRide.time = new Date(offerRide.dateTime).getTime();
+    offerRide.vehicleType = offerRide.vehicleType === 'Car' || offerRide.vehicleType === 'car' ? 'CAR' : 'BIKE';
 
     return this.http.post(`${this.baseUrl}/createride`, offerRide, this.httpOptions);
+  }
+
+  searchRide(findRide: FindRide) {
+    if (findRide.vehicleType === 'Car' || findRide.vehicleType === 'car') {
+      findRide.vehicleType = 'CAR';
+    }
+    if (findRide.vehicleType === 'Bike' || findRide.vehicleType === 'bike') {
+      findRide.vehicleType = 'BIKE';
+    }
+    return this.http.post(`${this.baseUrl}/searchride`, findRide, this.httpOptions);
   }
 
   validateUser(value: object): Observable<any> {

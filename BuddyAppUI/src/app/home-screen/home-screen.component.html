@@ -46,13 +46,33 @@
                 <a class="btn btn&#45;&#45;white btn&#45;&#45;animated" (click)="showNeedRide = !showNeedRide ; showOfferRide = false">Find a Ride</a>
 
                 <mat-horizontal-stepper class="stepperView" *ngIf="showOfferRide" [linear]="true" #stepper>
+
+                  <mat-step [stepControl]="zeroFormGroup">
+                    <form [formGroup]="zeroFormGroup">
+                      <ng-template matStepLabel>Vehicle Type</ng-template>
+                      <mat-form-field class="formField">
+                        <mat-label>Type of Vehicle</mat-label>
+                        <!--<select matInput placeholder="Car" formControlName="zeroCtrl"
+                                [(ngModel)]="offerRide.vehicleType" required>
+                          <option value="car">Car</option>
+                          <option value="bike">Bike</option>
+                        </select>-->
+                        <input matInput placeholder="Car/Bike" formControlName="zeroCtrl"
+                               [(ngModel)]="offerRide.vehicleType" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
                   <mat-step [stepControl]="firstFormGroup">
                     <form [formGroup]="firstFormGroup">
                       <ng-template matStepLabel>Fill pick-up information</ng-template>
                       <mat-form-field class="formField">
                         <mat-label>Pick-Up Location</mat-label>
                         <input matInput placeholder="Contentserv, Kalyani Nagar" formControlName="firstCtrl"
-                               [(ngModel)]="offerRide.location" required>
+                               [(ngModel)]="offerRide.pickUpLocation" required>
                       </mat-form-field>
                       <div>
                         <button mat-button matStepperNext>Next</button>
@@ -66,7 +86,7 @@
                       <mat-form-field class="formField">
                         <mat-label>Drop-Off Location</mat-label>
                         <input matInput formControlName="secondCtrl" placeholder="Eg. Kharadi"
-                               [(ngModel)]="offerRide.dropoff" required>
+                               [(ngModel)]="offerRide.dropOffLocation" required>
                       </mat-form-field>
                       <div>
                         <button mat-button matStepperPrevious>Back</button>
@@ -133,13 +153,33 @@
                 </mat-horizontal-stepper>
 
                 <mat-horizontal-stepper class="stepperView" *ngIf="showNeedRide" [linear]="true" #stepper>
+
+                  <mat-step [stepControl]="zeroFormGroupFindRide">
+                    <form [formGroup]="zeroFormGroupFindRide">
+                      <ng-template matStepLabel>Vehicle Type</ng-template>
+                      <mat-form-field class="formField">
+                        <mat-label>Type of Vehicle</mat-label>
+                        <!--<select matInput formControlName="zeroCtrlFindRide"
+                               [(ngModel)]="findRide.vehicleType" required>
+                          <option value="car">Car</option>
+                          <option value="bike">Bike</option>
+                        </select>-->
+                        <input matInput placeholder="Car/Bike" formControlName="zeroCtrlFindRide"
+                               [(ngModel)]="findRide.vehicleType">
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
                   <mat-step [stepControl]="firstFormGroupFindRide">
                     <form [formGroup]="firstFormGroupFindRide">
                       <ng-template matStepLabel>Fill pick-up information</ng-template>
                       <mat-form-field class="formField">
                         <mat-label>Leaving From</mat-label>
                         <input matInput placeholder="Contentserv, Kalyani Nagar" formControlName="firstCtrlFindRide"
-                               [(ngModel)]="findRidee.pickup" required>
+                               [(ngModel)]="findRide.pickUpLocation" required>
                       </mat-form-field>
                       <div>
                         <button mat-button matStepperNext>Next</button>
@@ -153,7 +193,7 @@
                       <mat-form-field class="formField">
                         <mat-label>Going To</mat-label>
                         <input matInput formControlName="secondCtrlFindRide" placeholder="Eg. Kharadi"
-                               [(ngModel)]="findRidee.dropoff" required>
+                               [(ngModel)]="findRide.dropOffLocation" required>
                       </mat-form-field>
                       <div>
                         <button mat-button matStepperPrevious>Back</button>
@@ -162,8 +202,8 @@
                     </form>
                   </mat-step>
 
-                  <mat-step [stepControl]="thirdFormGroupFindRide" label="Fill Date & Time Details">
-                    <!-- #enddocregion label -->
+                  <!--<mat-step [stepControl]="thirdFormGroupFindRide" label="Fill Date & Time Details">
+                    &lt;!&ndash; #enddocregion label &ndash;&gt;
                     <form [formGroup]="thirdFormGroupFindRide">
                       <mat-form-field class="formField">
                         <mat-label>Date & Time</mat-label>
@@ -176,15 +216,15 @@
                         <button mat-button matStepperNext>Next</button>
                       </div>
                     </form>
-                  </mat-step>
+                  </mat-step>-->
 
                   <mat-step [stepControl]="fourthFormGroupFindRide" label="Number of Seats">
                     <!-- #enddocregion label -->
                     <form [formGroup]="fourthFormGroupFindRide">
                       <mat-form-field class="formField">
                         <mat-label>Number of Seats to book ?</mat-label>
-                        <input type="number"  matInput formControlName="fourthCtrlFindRide" placeholder="3"
-                               [(ngModel)]="findRidee.numberOfSeats" required>
+                        <input type="number" matInput formControlName="fourthCtrlFindRide" placeholder="3"
+                               [(ngModel)]="findRide.noOfSeats" required>
                       </mat-form-field>
                       <div>
                         <button mat-button matStepperPrevious>Back</button>
@@ -198,7 +238,7 @@
                     <p>You are now done.</p>
                     <div>
                       <button mat-button matStepperPrevious>Back</button>
-                      <button mat-button (click)="findRide()">Search</button>
+                      <button mat-button (click)="searchRide()">Search</button>
                       <button mat-button (click)="stepper.reset()">Reset</button>
                     </div>
                   </mat-step>

@@ -1,7 +1,8 @@
 DROP TABLE IF EXISTS heybuddy.rides;
 CREATE TABLE heybuddy.rides
 (ride_id bigint default nextval('heybuddy.seqIID') PRIMARY KEY,
-location VARCHAR ( 50 ),
+pick_up_location VARCHAR ( 50 ),
+drop_off_location VARCHAR ( 50 ),
 pinCode bigint ,
 vehicle_type smallint,
 time bigint,

@@ -22,4 +22,8 @@ public class RidesService {
 		return rideDAO.getRideById(id);
 	}
 
+	public List<Ride> searchRide(Ride ride) {
+		return rideDAO.searchRide(ride);
+	}
+
 }

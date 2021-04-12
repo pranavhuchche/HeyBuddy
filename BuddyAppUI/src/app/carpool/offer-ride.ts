@@ -1,6 +1,7 @@
 export class OfferRide {
-  location: string;
-  dropoff: string;
+  vehicleType: string;
+  pickUpLocation: string;
+  dropOffLocation: string;
   dateTime: Date;
   noOfSeats: number;
   charges: number;

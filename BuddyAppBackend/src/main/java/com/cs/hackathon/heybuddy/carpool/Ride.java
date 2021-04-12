@@ -3,7 +3,8 @@ package com.cs.hackathon.heybuddy.carpool;
 public class Ride {
 	private String rideId;
 	private String userName;
-	private String location;
+	private String pickUpLocation;
+	private String dropOffLocation;
 	private Integer pinCode;
 	private VehicleType vehicleType;
 	private Long time;
@@ -26,12 +27,20 @@ public class Ride {
 		this.userName = userName;
 	}
 
-	public final String getLocation() {
-		return location;
+	public final String getPickUpLocation() {
+		return pickUpLocation;
 	}
 
-	public final void setLocation(String location) {
-		this.location = location;
+	public final void setPickUpLocation(String pickUpLocation) {
+		this.pickUpLocation = pickUpLocation;
+	}
+
+	public final String getDropOffLocation() {
+		return dropOffLocation;
+	}
+
+	public final void setDropOffLocation(String dropOffLocation) {
+		this.dropOffLocation = dropOffLocation;
 	}
 
 	public final Integer getPinCode() {

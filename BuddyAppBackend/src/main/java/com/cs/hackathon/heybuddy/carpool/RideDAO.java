@@ -13,9 +13,10 @@ public class RideDAO {
 
 	public Ride createRide(Ride ride) {
 		StringBuilder query = new StringBuilder(
-				"INSERT INTO heybuddy.rides( location, pinCode, vehicle_type, time, charges, no_of_seats, username)");
+				"INSERT INTO heybuddy.rides( pick_up_location, drop_off_location, pinCode, vehicle_type, time, charges, no_of_seats, username)");
 		query.append(" VALUES ('");
-		query.append(ride.getLocation() + "',");
+		query.append(ride.getPickUpLocation() + "','");
+		query.append(ride.getDropOffLocation() + "',");
 		query.append(ride.getPinCode() + ",");
 		query.append(ride.getVehicleType().ordinal() + ",");
 		query.append(ride.getTime() + ",");
@@ -34,5 +35,19 @@ public class RideDAO {
 	public Ride getRideById(String id) {
 		StringBuilder query = new StringBuilder("SELECT * FROM heybuddy.rides WHERE ride_id = " + id + " ORDER BY time");
 		return jdbcTemplate.queryForObject(query.toString(), new RideRowMapper());
+	}
+
+	public List<Ride> searchRide(Ride ride) {
+		StringBuilder query = new StringBuilder("Select * from heybuddy.rides r where r.no_of_seats >= ");
+		query.append(ride.getNoOfSeats());
+		query.append(" AND r.pick_up_location ilike '%");
+		query.append(ride.getPickUpLocation());
+		query.append("%' AND r.drop_off_location ilike '%");
+		query.append(ride.getDropOffLocation() + "%'");
+		if (ride.getVehicleType().ordinal() != 0) {
+			query.append(" AND vehicle_type = ");			
+			query.append(ride.getVehicleType().ordinal());
+		}
+		return jdbcTemplate.query(query.toString(), new RideRowMapper());
 	}
 }

@@ -25,12 +25,14 @@ export class HomeScreenComponent implements OnInit {
   isLinear = false;
   showOfferRide = false;
   showNeedRide = false;
+  zeroFormGroup: FormGroup;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
   fifthFormGroup: FormGroup;
 
+  zeroFormGroupFindRide: FormGroup;
   firstFormGroupFindRide: FormGroup;
   secondFormGroupFindRide: FormGroup;
   thirdFormGroupFindRide: FormGroup;
@@ -43,6 +45,9 @@ export class HomeScreenComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.zeroFormGroup = this._formBuilder.group({
+      zeroCtrl: ['', Validators.required]
+    });
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -59,6 +64,9 @@ export class HomeScreenComponent implements OnInit {
       fifthCtrl: ['', Validators.required]
     });
 
+    this.zeroFormGroupFindRide = this._formBuilder.group({
+      zeroCtrlFindRide: ['']
+    });
     this.firstFormGroupFindRide = this._formBuilder.group({
       firstCtrlFindRide: ['', Validators.required]
     });
@@ -103,8 +111,11 @@ export class HomeScreenComponent implements OnInit {
       error => console.log(error));
   }
 
-  findRide() {
-    console.log(this.findRidee);
+  searchRide() {
+    this.employeeService.searchRide(this.findRide).subscribe(data => {
+        console.log(data);
+      },
+      error => console.log(error));
   }
 
   gotoList() {

@@ -20,6 +20,11 @@ public class RidesController {
 		ride.setUserName(username);
 		return ridesService.createRide(ride);
 	}
+	
+	@PostMapping("/searchride")
+	public List<Ride> searchRide(@RequestBody Ride ride) {
+		return ridesService.searchRide(ride);
+	}
 
 	@GetMapping("/getrides/all")
 	public List<Ride> getAllRides() {
