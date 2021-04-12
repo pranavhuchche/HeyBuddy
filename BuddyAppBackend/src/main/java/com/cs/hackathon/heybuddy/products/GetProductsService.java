@@ -17,10 +17,14 @@ public class GetProductsService {
 	
 	protected IGetProductsResponseModel getAllProducts(IGetProductsRequestModel model) throws Exception {
 		IGetProductsResponseModel returnModel = new GetProductsResponseModel();
-		List<Product> allProducts = productsDAO.getAllProducts(model);
+		List<GetProduct> allProducts = productsDAO.getAllProducts(model);
 		returnModel.setProducts(allProducts);
 		returnModel.setTotalContent((long) allProducts.size());
 		return returnModel;
+	}
+	
+	protected void markProductInterested(Long id, String username) throws Exception {
+		productsDAO.markProductInterested(id, username);
 	}
 
 }

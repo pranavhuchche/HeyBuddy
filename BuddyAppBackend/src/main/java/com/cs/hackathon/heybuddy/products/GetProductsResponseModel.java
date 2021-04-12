@@ -5,16 +5,16 @@ import java.util.List;
 
 public class GetProductsResponseModel implements IGetProductsResponseModel {
 
-	protected List<Product> products = new ArrayList<>();
+	protected List<GetProduct> products = new ArrayList<>();
 	protected Long totalContent = 0l;
 
 	@Override
-	public List<Product> getProducts() {
+	public List<GetProduct> getProducts() {
 		return products;
 	}
 
 	@Override
-	public void setProducts(List<Product> products) {
+	public void setProducts(List<GetProduct> products) {
 		this.products = products;
 	}
 

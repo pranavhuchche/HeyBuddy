@@ -7,6 +7,7 @@ public class GetProductsRequestModel implements IGetProductsRequestModel {
 	protected String searchText;
 	protected String sortOrder;
 	protected Integer listingType;
+	protected String username;
 	
 	@Override
 	public Long getFrom() {
@@ -56,5 +57,13 @@ public class GetProductsRequestModel implements IGetProductsRequestModel {
 	@Override
 	public void setListingType(Integer listingType) {
 		this.listingType = listingType;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 }

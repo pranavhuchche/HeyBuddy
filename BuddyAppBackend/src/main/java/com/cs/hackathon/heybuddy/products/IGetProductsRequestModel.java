@@ -7,6 +7,7 @@ public interface IGetProductsRequestModel {
 	public static final String SEARCH_TEXT = "searchText";
 	public static final String SORT_ORDER = "sortOrder";
 	public static final String LISTING_TYPE = "listingType";
+	public static final String USERNAME = "username";
 	
 	public Long getFrom();
 	public void setFrom(Long from);
@@ -23,4 +24,6 @@ public interface IGetProductsRequestModel {
 	public Integer getListingType();
 	public void setListingType(Integer listingType);
 	
+	public String getUsername();
+	public void setUsername(String username);
 }
