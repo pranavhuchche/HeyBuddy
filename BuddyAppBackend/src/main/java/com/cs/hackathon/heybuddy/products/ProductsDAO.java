@@ -52,9 +52,7 @@ public class ProductsDAO {
 		query.append(product.getListingType().ordinal() + ",'");
 		query.append(product.getUsername() + "'");
 		query.append(") RETURNING *");
-
 		return jdbcTemplate.queryForObject(query.toString(), null, new ProductRowMapper());
-
 	}
 
 	

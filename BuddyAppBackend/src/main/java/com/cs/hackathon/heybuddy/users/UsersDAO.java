@@ -51,5 +51,13 @@ public class UsersDAO {
 	private boolean checkPassword(String plainPassword, String hashedPassword) {
 		return (BCrypt.checkpw(plainPassword, hashedPassword)) ? true : false;
 	}
+	
+	public User saveUser(User user) {
+		StringBuilder query = new StringBuilder("UPDATE  heybuddy.users set  name = ?, dob = ?, bio = ?, mobile_number = ?,"
+				+ " desk_location = ?, email = ?, hobbies = ?, password = ? where username = '"+ user.getUsername() + "' RETURNING * ");
+		Object[] args = {user.getName(), user.getDob(), user.getBio(), user.getMobile(),
+				user.getDeskLocation(), user.getEmail(), user.getHobbies(), hashPassword(user.getPassword())};
+		return jdbcTemplate.queryForObject(query.toString(), args, new UserRowMapper());
+	}
 
 }

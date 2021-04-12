@@ -11,23 +11,25 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 	
 	@Autowired
-	GetUserService getUserService;
-	
-	@Autowired
-	CreateUserService createUserService;
+	UserService userService;
 
 	@GetMapping("/getuser/{id}")
 	public User getUserById(@PathVariable String id) throws Exception {
-		return getUserService.getUserById(id);
+		return userService.getUserById(id);
 	}
 	
 	@PostMapping("/createuser")
 	public User createUser(@RequestBody User user) throws Exception {
-		return createUserService.createUser(user);
+		return userService.createUser(user);
 	}
 	
 	@PostMapping("/validateuser")
 	public String validateUser(@RequestBody User user) throws Exception {
-		return getUserService.validateUser(user);
+		return userService.validateUser(user);
+	}
+	
+	@PostMapping("/saveuser")
+	public User saveUser(@RequestBody User user) throws Exception {
+		return userService.saveUser(user);
 	}
 }
