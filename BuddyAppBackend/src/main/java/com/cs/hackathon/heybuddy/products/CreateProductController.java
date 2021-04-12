@@ -11,7 +11,7 @@ public class CreateProductController {
 	protected CreateProductService createProductService;
 
 	@PostMapping("/createproduct")
-	public Product getProductById(@RequestBody Product product) throws Exception {
+	public Product createNewProduct(@RequestBody Product product) throws Exception {
 		return createProductService.createNewProduct(product);
 	}
 }
