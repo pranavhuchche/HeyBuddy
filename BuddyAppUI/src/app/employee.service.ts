@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {OfferRide} from './carpool/offer-ride';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,12 @@ import { Observable } from 'rxjs';
 export class EmployeeService {
 
   private baseUrl = 'http://localhost:8080/heyBuddy';
+  const httpOptions = {
+    headers: new HttpHeaders({
+      // TODO : remove hardcoded username.
+      user:  'test_user1'
+    })
+  };
   records = [
     {
       "id" : 1,
@@ -50,15 +57,14 @@ export class EmployeeService {
   }
 
   getListData() : Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        // TODO : remove hardcoded username.
-        user:  'test_user1'
-      })
-    };
-
     return this.http.post(`${this.baseUrl}/getproducts/all`, {"searchText": "",
       "sortOrder": "",
-      "listingType": 0}, httpOptions);
+      "listingType": 0}, this.httpOptions);
+  }
+
+  submitRide(offerRide: OfferRide) {
+    offerRide.time = new Date(offerRide.dateTime).getTime();
+
+    return this.http.post(`${this.baseUrl}/createride`, offerRide, this.httpOptions);
   }
 }

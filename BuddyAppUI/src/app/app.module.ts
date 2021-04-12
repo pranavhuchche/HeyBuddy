@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
@@ -17,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {ConfirmationDialog} from './confirm-dialog/confirm-dialog.component';
 import {ProductInfoDialog} from './product-info-dialog/product-info-dialog';
+import {OfferRideComponent} from './carpool/carpool.component';
 
 import {
   MatAutocompleteModule,
@@ -54,11 +55,13 @@ import {
     UpdateEmployeeComponent,
     ConfirmationDialog,
     ProductInfoDialog,
+    OfferRideComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatSliderModule,
     BrowserAnimationsModule,
@@ -68,16 +71,13 @@ import {
     MatIconModule,
     MatCardModule,
     MatAutocompleteModule,
-    MatButtonModule,
     MatButtonToggleModule,
-    MatCardModule,
     MatCheckboxModule,
     MatChipsModule,
     MatDatepickerModule,
     MatDialogModule,
     MatExpansionModule,
     MatGridListModule,
-    MatIconModule,
     MatInputModule,
     MatListModule,
     MatMenuModule,

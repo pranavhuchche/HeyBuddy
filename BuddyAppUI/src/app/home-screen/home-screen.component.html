@@ -29,7 +29,206 @@
             </mat-drawer-container>
           </div>
         </mat-tab>
-        <mat-tab label="Car Pool"></mat-tab>
+        <mat-tab label="Car Pool">
+          <div class="carpool_main">
+            <div class="carpool">
+              <!--<div class="carpool__logo-box">
+                <img src="img/logo-white.png" alt="Logo" class="header__logo">
+              </div>-->
+
+              <div class="carpool__text-box">
+                <h1 class="heading-primary">
+                  <span class="heading-primary&#45;&#45;main">CarServ</span>
+                  <span class="heading-primary&#45;&#45;sub">Office Commute made easier. Your one stop solution to office commute problems.</span>
+                </h1>
+
+                <a class="btn btn&#45;&#45;white btn&#45;&#45;animated" (click)="showOfferRide = !showOfferRide; showNeedRide = false">Offer a Ride</a>
+
+                <a class="btn btn&#45;&#45;white btn&#45;&#45;animated" (click)="showNeedRide = !showNeedRide ; showOfferRide = false">Find a Ride</a>
+
+                <mat-horizontal-stepper class="stepperView" *ngIf="showOfferRide" [linear]="true" #stepper>
+                  <mat-step [stepControl]="firstFormGroup">
+                    <form [formGroup]="firstFormGroup">
+                      <ng-template matStepLabel>Fill pick-up information</ng-template>
+                      <mat-form-field class="formField">
+                        <mat-label>Pick-Up Location</mat-label>
+                        <input matInput placeholder="Contentserv, Kalyani Nagar" formControlName="firstCtrl"
+                               [(ngModel)]="offerRide.location" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="secondFormGroup" label="Fill drop location">
+                    <!-- #enddocregion label -->
+                    <form [formGroup]="secondFormGroup">
+                      <mat-form-field class="formField">
+                        <mat-label>Drop-Off Location</mat-label>
+                        <input matInput formControlName="secondCtrl" placeholder="Eg. Kharadi"
+                               [(ngModel)]="offerRide.dropoff" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="thirdFormGroup" label="Fill Date & Time Details">
+                    <!-- #enddocregion label -->
+                    <form [formGroup]="thirdFormGroup">
+                      <mat-form-field class="formField">
+                        <mat-label>Date & Time</mat-label>
+                        <input type="datetime-local" placeholder="01-01-2021" matInput formControlName="thirdCtrl"
+                               [(ngModel)]="offerRide.dateTime" required >
+                      </mat-form-field>
+
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="fourthFormGroup" label="Available Seats">
+                    <!-- #enddocregion label -->
+                    <form [formGroup]="fourthFormGroup">
+                      <mat-form-field class="formField">
+                        <mat-label>How many passengers you can take ?</mat-label>
+                        <input type="number" matInput formControlName="fourthCtrl" placeholder="3"
+                               [(ngModel)]="offerRide.noOfSeats" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="fifthFormGroup" label="Price Details">
+                    <form [formGroup]="fifthFormGroup">
+                      <mat-form-field class="formField">
+                        <mat-label>Price per seat ?</mat-label>
+                        <input type="number" matInput formControlName="fifthCtrl" placeholder="100"
+                               [(ngModel)]="offerRide.charges" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <p>You are now done.</p>
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button (click)="submitRide()">Done</button>
+                      <button mat-button (click)="stepper.reset()">Reset</button>
+                    </div>
+                  </mat-step>
+
+                </mat-horizontal-stepper>
+
+                <mat-horizontal-stepper class="stepperView" *ngIf="showNeedRide" [linear]="true" #stepper>
+                  <mat-step [stepControl]="firstFormGroupFindRide">
+                    <form [formGroup]="firstFormGroupFindRide">
+                      <ng-template matStepLabel>Fill pick-up information</ng-template>
+                      <mat-form-field class="formField">
+                        <mat-label>Leaving From</mat-label>
+                        <input matInput placeholder="Contentserv, Kalyani Nagar" formControlName="firstCtrlFindRide"
+                               [(ngModel)]="findRide.pickup" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="secondFormGroupFindRide" label="Fill drop location">
+                    <!-- #enddocregion label -->
+                    <form [formGroup]="secondFormGroupFindRide">
+                      <mat-form-field class="formField">
+                        <mat-label>Going To</mat-label>
+                        <input matInput formControlName="secondCtrlFindRide" placeholder="Eg. Kharadi"
+                               [(ngModel)]="findRide.dropoff" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="thirdFormGroupFindRide" label="Fill Date & Time Details">
+                    <!-- #enddocregion label -->
+                    <form [formGroup]="thirdFormGroupFindRide">
+                      <mat-form-field class="formField">
+                        <mat-label>Date & Time</mat-label>
+                        <input type="datetime-local" placeholder="01-01-2021" matInput formControlName="thirdCtrlFindRide"
+                               [(ngModel)]="findRide.dateTime" required >
+                      </mat-form-field>
+
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="fourthFormGroupFindRide" label="Number of Seats">
+                    <!-- #enddocregion label -->
+                    <form [formGroup]="fourthFormGroupFindRide">
+                      <mat-form-field class="formField">
+                        <mat-label>Number of Seats to book ?</mat-label>
+                        <input type="number"  matInput formControlName="fourthCtrlFindRide" placeholder="3"
+                               [(ngModel)]="findRide.numberOfSeats" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <p>You are now done.</p>
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button (click)="findRide()">Search</button>
+                      <button mat-button (click)="stepper.reset()">Reset</button>
+                    </div>
+                  </mat-step>
+
+                </mat-horizontal-stepper>
+
+              </div>
+            </div>
+
+
+          </div>
+
+          <!--<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+            {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+          </button>-->
+
+          <!--<button mat-raised-button (click)="showOfferRide = !showOfferRide" id="offer-ride">
+            Offer a Ride
+          </button>
+
+          <button mat-raised-button (click)="showNeedRide = !showNeedRide" id="need-ride">
+            Find a Ride
+          </button>-->
+
+
+
+
+
+        </mat-tab>
         <mat-tab label="Interest"></mat-tab>
         <mat-tab label="About Us"></mat-tab>
       </mat-tab-group>

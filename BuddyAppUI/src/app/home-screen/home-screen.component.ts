@@ -6,6 +6,9 @@ import {ConfirmationDialog} from '../confirm-dialog/confirm-dialog.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 export interface DialogData {};
 import {ProductInfoDialog} from '../product-info-dialog/product-info-dialog';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {OfferRide} from '../carpool/offer-ride';
+import {FindRide} from '../carpool/find-ride';
 
 @Component({
   selector: 'app-home-screen',
@@ -15,16 +18,63 @@ import {ProductInfoDialog} from '../product-info-dialog/product-info-dialog';
 export class HomeScreenComponent implements OnInit {
 
   employee: Employee = new Employee();
+  offerRide: OfferRide = new OfferRide();
+  findRide: FindRide = new FindRide();
   submitted = false;
   records = [];
   isShowProductDetails = false;
+  isLinear = false;
+  showOfferRide = false;
+  showNeedRide = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  fourthFormGroup: FormGroup;
+  fifthFormGroup: FormGroup;
+
+  firstFormGroupFindRide: FormGroup;
+  secondFormGroupFindRide: FormGroup;
+  thirdFormGroupFindRide: FormGroup;
+  fourthFormGroupFindRide: FormGroup;
+  fifthFormGroupFindRide: FormGroup;
 
   constructor(private employeeService: EmployeeService,
-    private router: Router, public dialog: MatDialog) {
+              private router: Router, public dialog: MatDialog, private _formBuilder: FormBuilder) {
     this.getList();
   }
 
   ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
+    this.fourthFormGroup = this._formBuilder.group({
+      fourthCtrl: ['', Validators.required]
+    });
+    this.fifthFormGroup = this._formBuilder.group({
+      fifthCtrl: ['', Validators.required]
+    });
+
+    this.firstFormGroupFindRide = this._formBuilder.group({
+      firstCtrlFindRide: ['', Validators.required]
+    });
+    this.secondFormGroupFindRide = this._formBuilder.group({
+      secondCtrlFindRide: ['', Validators.required]
+    });
+    this.thirdFormGroupFindRide = this._formBuilder.group({
+      thirdCtrlFindRide: ['', Validators.required]
+    });
+    this.fourthFormGroupFindRide = this._formBuilder.group({
+      fourthCtrlFindRide: ['', Validators.required]
+    });
+    this.fifthFormGroupFindRide = this._formBuilder.group({
+      fifthCtrlFindRide: ['', Validators.required]
+    });
   }
 
   newEmployee(): void {
@@ -45,6 +95,17 @@ export class HomeScreenComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.save();    
+  }
+
+  submitRide() {
+    this.employeeService.submitRide(this.offerRide).subscribe(data => {
+        console.log(data);
+      },
+      error => console.log(error));
+  }
+
+  findRide() {
+    console.log(this.findRide);
   }
 
   gotoList() {
@@ -98,4 +159,7 @@ export class HomeScreenComponent implements OnInit {
     });
   }
 
+  gotoOfferRide() {
+    this.router.navigate(['/offerride']);
+  }
 }
