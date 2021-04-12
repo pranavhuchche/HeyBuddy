@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -50,8 +50,15 @@ export class EmployeeService {
   }
 
   getListData() : Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        // TODO : remove hardcoded username.
+        user:  'test_user1'
+      })
+    };
+
     return this.http.post(`${this.baseUrl}/getproducts/all`, {"searchText": "",
       "sortOrder": "",
-      "listingType": 0});
+      "listingType": 0}, httpOptions);
   }
 }
