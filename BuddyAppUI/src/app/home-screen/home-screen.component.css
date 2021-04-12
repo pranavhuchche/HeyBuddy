@@ -95,3 +95,8 @@ mat-grid-tile {
   border: 1px solid #c4bcbc;
   margin-bottom: 5px;
 }
+
+.productInfoDialogContainer {
+  height: 100%;
+  width: 100%;
+}

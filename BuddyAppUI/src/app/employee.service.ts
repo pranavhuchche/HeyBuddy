@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeService {
 
-  private baseUrl = 'http://localhost:8080/springboot-crud-rest/api/v1/employees';
+  private baseUrl = 'http://localhost:8080/heyBuddy';
   records = [
     {
       "id" : 1,
@@ -49,7 +49,9 @@ export class EmployeeService {
     return this.http.get(`${this.baseUrl}`);
   }
 
-  getListData() {
-    return this.records;
+  getListData() : Observable<any> {
+    return this.http.post(`${this.baseUrl}/getproducts/all`, {"searchText": "",
+      "sortOrder": "",
+      "listingType": 0});
   }
 }
