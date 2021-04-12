@@ -19,7 +19,7 @@ export class HomeScreenComponent implements OnInit {
 
   employee: Employee = new Employee();
   offerRide: OfferRide = new OfferRide();
-  findRidee: FindRide = new FindRide();
+  findRide: FindRide = new FindRide();
   submitted = false;
   records = [];
   isLinear = false;
