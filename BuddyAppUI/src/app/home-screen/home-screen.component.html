@@ -2,7 +2,7 @@
   <div class="homeScreenContainer">
     <div class="homeScreenTabGroup">
       <mat-tab-group class="matTabGroup" id="tabGroup">
-        <mat-tab class="matTab" label="Home" color="primary">
+        <mat-tab class="matTab" label="Sale" color="primary">
           <div class="homeScreenHeader">
             <mat-icon class="navigationToggleOpen" *ngIf="!showFiller" aria-hidden="false" (click)="drawer.toggle(); showFiller = !showFiller">swap_horiz</mat-icon>
             <mat-icon class="navigationToggleClose" *ngIf="showFiller" (click)="drawer.toggle(); showFiller = !showFiller">swap_horiz</mat-icon>
@@ -17,15 +17,21 @@
                 </button>
               </mat-drawer>
                 <div class="cardsContainer">
-                  <mat-card class="listCard" *ngFor="let record of records;" (click)="showAlert(record.name)">{{record.name}}
+                  <mat-card class="listCard" *ngFor="let record of records;">
+                    <div class="cardContainer" (click)="openProductDetails(record)">
+                      <img class="cardIconContainer">
+                      <span class="cardName">{{record.productName}}</span>
+                      <span class="cardCost">{{record.cost_from | currency:'INR':'symbol-narrow':'4.2-2'}} - {{record.cost_to | currency:'INR':'symbol-narrow':'4.2-2'}}</span>
+                      <button class="cardInterestButton" mat-raised-button color="primary" (click)="openDialog()">Interested</button>
+                    </div>
                   </mat-card>
                 </div>
             </mat-drawer-container>
           </div>
         </mat-tab>
-        <mat-tab label="About"></mat-tab>
-        <mat-tab label="Gallery"></mat-tab>
-        <mat-tab label="Contact"></mat-tab>
+        <mat-tab label="Car Pool"></mat-tab>
+        <mat-tab label="Interest"></mat-tab>
+        <mat-tab label="About Us"></mat-tab>
       </mat-tab-group>
     </div>
   </div>
