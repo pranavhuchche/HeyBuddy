@@ -245,6 +245,16 @@
 
                 </mat-horizontal-stepper>
 
+                <div class="searchedRidesCardsContainer">
+                  <mat-card class="searchedRidesListCard" *ngFor="let searchedRide of searchedRides;">
+                    <div class="searchedRidesCardContainer">
+                      <span class="searchedRidesCardName">{{searchedRide.pickUpLocation}} - {{searchedRide.dropOffLocation}}</span>
+                      <button class="searchedRidesCardInterestButton" mat-raised-button color="primary" (click)="openDialog()">Interested</button>
+                      <span class="searchedRidesCardCost">{{searchedRide.charges | currency:'INR':'symbol-narrow':'3.2-2'}}</span>
+                      <span class="searchedRidesCardUserName">{{searchedRide.userName}} will be driving @ {{searchedRide.time}}</span>
+                    </div>
+                  </mat-card>
+                </div>
               </div>
             </div>
 

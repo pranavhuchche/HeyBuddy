@@ -20,6 +20,7 @@ export class HomeScreenComponent implements OnInit {
   employee: Employee = new Employee();
   offerRide: OfferRide = new OfferRide();
   findRide: FindRide = new FindRide();
+  searchedRides = [];
   submitted = false;
   records = [];
   isLinear = false;
@@ -114,6 +115,7 @@ export class HomeScreenComponent implements OnInit {
   searchRide() {
     this.employeeService.searchRide(this.findRide).subscribe(data => {
         console.log(data);
+        this.searchedRides = data;
       },
       error => console.log(error));
   }
