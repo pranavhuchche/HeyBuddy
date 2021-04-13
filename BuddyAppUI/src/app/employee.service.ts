@@ -49,18 +49,18 @@ export class EmployeeService {
     }, this.httpOptions);
   }
 
-  submitRide(offerRide: OfferRide) {
+  submitRide(offerRide: OfferRide): Observable<any> {
     offerRide.time = new Date(offerRide.dateTime).getTime();
     offerRide.vehicleType = offerRide.vehicleType === 'Car' || offerRide.vehicleType === 'car' ? 'CAR' : 'BIKE';
 
     return this.http.post(`${this.baseUrl}/createride`, offerRide, this.httpOptions);
   }
 
-  searchRide(findRide: FindRide) {
-    if (findRide.vehicleType === 'Car' || findRide.vehicleType === 'car') {
+  searchRide(findRide: FindRide): Observable<any> {
+    if (findRide.vehicleType === 'Car') {
       findRide.vehicleType = 'CAR';
     }
-    if (findRide.vehicleType === 'Bike' || findRide.vehicleType === 'bike') {
+    if (findRide.vehicleType === 'Bike') {
       findRide.vehicleType = 'BIKE';
     }
     return this.http.post(`${this.baseUrl}/searchride`, findRide, this.httpOptions);

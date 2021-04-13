@@ -6,7 +6,7 @@ import {ConfirmationDialog} from '../confirm-dialog/confirm-dialog.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 export interface DialogData {};
 import {ProductInfoDialog} from '../product-info-dialog/product-info-dialog';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {OfferRide} from '../carpool/offer-ride';
 import {FindRide} from '../carpool/find-ride';
 
@@ -26,6 +26,8 @@ export class HomeScreenComponent implements OnInit {
   isLinear = false;
   showOfferRide = false;
   showNeedRide = false;
+
+  zeroFormControl = new FormControl();
   zeroFormGroup: FormGroup;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -33,6 +35,8 @@ export class HomeScreenComponent implements OnInit {
   fourthFormGroup: FormGroup;
   fifthFormGroup: FormGroup;
 
+  zeroFormControlFindRide = new FormControl();
+  zeroFormControlList: string[] = ['Car', 'Bike'];
   zeroFormGroupFindRide: FormGroup;
   firstFormGroupFindRide: FormGroup;
   secondFormGroupFindRide: FormGroup;
@@ -47,7 +51,7 @@ export class HomeScreenComponent implements OnInit {
 
   ngOnInit() {
     this.zeroFormGroup = this._formBuilder.group({
-      zeroCtrl: ['', Validators.required]
+      zeroFormControl: ['']
     });
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -116,6 +120,10 @@ export class HomeScreenComponent implements OnInit {
     this.employeeService.searchRide(this.findRide).subscribe(data => {
         console.log(data);
         this.searchedRides = data;
+        this.searchedRides.forEach(ride => {
+          let date = new Date(ride.time);
+          ride.time = date.toString();
+        });
       },
       error => console.log(error));
   }

@@ -44,7 +44,7 @@ public class RideDAO {
 		query.append(ride.getPickUpLocation());
 		query.append("%' AND r.drop_off_location ilike '%");
 		query.append(ride.getDropOffLocation() + "%'");
-		if (ride.getVehicleType().ordinal() != 0) {
+		if (ride.getVehicleType() != null && ride.getVehicleType().ordinal() != 0) {
 			query.append(" AND vehicle_type = ");			
 			query.append(ride.getVehicleType().ordinal());
 		}
