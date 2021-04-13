@@ -1,5 +1,8 @@
 package com.cs.hackathon.heybuddy.users;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -37,7 +40,7 @@ public class UsersDAO {
 		return BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());
 	}
 	
-	public String validateUser(User user) throws Exception {
+	public Map<String, String> validateUser(User user) throws Exception {
 		String username = user.getUsername();
 		String password = user.getPassword();
 		StringBuilder query = new StringBuilder("Select u.password from heybuddy.users u where u.username = ?");
@@ -45,7 +48,9 @@ public class UsersDAO {
 		if(hashedPassword == null || "".equals(hashedPassword) || !checkPassword(password, hashedPassword)) {
 			throw new Exception("User or Password is incorrect.");
 		}
-		return username;
+		Map<String,String> response = new HashMap<>();
+		response.put("username ", username);
+		return response;
 	}
 	
 	private boolean checkPassword(String plainPassword, String hashedPassword) {

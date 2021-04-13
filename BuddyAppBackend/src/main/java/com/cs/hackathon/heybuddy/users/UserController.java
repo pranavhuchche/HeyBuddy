@@ -1,5 +1,7 @@
 package com.cs.hackathon.heybuddy.users;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +26,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/validateuser")
-	public String validateUser(@RequestBody User user) throws Exception {
+	public Map<String, String> validateUser(@RequestBody User user) throws Exception {
 		return userService.validateUser(user);
 	}
 	
