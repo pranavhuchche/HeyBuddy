@@ -18,6 +18,8 @@ import {MatCardModule} from '@angular/material/card';
 import {ConfirmationDialog} from './confirm-dialog/confirm-dialog.component';
 import {ProductInfoDialog} from './product-info-dialog/product-info-dialog';
 import {OfferRideComponent} from './carpool/carpool.component';
+import { LoginFormComponent} from './login-page/login-page';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {
   MatAutocompleteModule,
@@ -56,7 +58,8 @@ import {
     ConfirmationDialog,
     ProductInfoDialog,
     OfferRideComponent,
-  ],
+    LoginFormComponent,
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -96,6 +99,8 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatNativeDateModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   entryComponents: [ConfirmationDialog,ProductInfoDialog],

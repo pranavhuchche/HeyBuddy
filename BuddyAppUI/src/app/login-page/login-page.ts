@@ -1,82 +1,63 @@
-import { Input, Component, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {Input, Component, Output, EventEmitter} from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
+import {EmployeeService} from '../employee.service';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'my-login-form',
-  template: `
-      <mat-card>
-            <mat-card-title>Login</mat-card-title>
-      <mat-card-content>
-        <form [formGroup]="form" (ngSubmit)="submit()">
-          <p>
-            <mat-form-field>
-              <input type="text" matInput placeholder="Username" formControlName="username">
-            </mat-form-field>
-          </p>
-
-          <p>
-            <mat-form-field>
-              <input type="password" matInput placeholder="Password" formControlName="password">
-            </mat-form-field>
-          </p>
-
-          <p *ngIf="error" class="error">
-            {{ error }}
-          </p>
-
-          <div class="button">
-            <button type="submit" mat-button>Login</button>
-          </div>
-
-        </form>
-      </mat-card-content>
-    </mat-card>
-  `,
-  styles: [
-    `
-      :host {
-        display: flex;
-        justify-content: center;
-        margin: 100px 0px;
-      }
-
-      .mat-form-field {
-        width: 100%;
-        min-width: 300px;
-      }
-
-      mat-card-title,
-      mat-card-content {
-        display: flex;
-        justify-content: center;
-      }
-
-      .error {
-        padding: 16px;
-        width: 300px;
-        color: white;
-        background-color: red;
-      }
-
-      .button {
-        display: flex;
-        justify-content: flex-end;
-      }
-    `,
-  ],
-
+  selector: 'login-page',
+  templateUrl: './login-page.html',
+  styleUrls: ['./login-page.css']
 })
 export class LoginFormComponent {
+  showSignUpSection = false;
+
+  constructor(private employeeService: EmployeeService, private router: Router) {
+  }
+
   form: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
   });
 
+  signUpForm: FormGroup = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+    name: new FormControl(''),
+    dob: new FormControl(''),
+    mobile: new FormControl(''),
+    email: new FormControl(''),
+  });
+
+  gotoList() {
+    this.router.navigate(['/home']);
+  }
+
   submit() {
     if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
+      this.employeeService.validateUser(this.form.value).subscribe(data => {
+        console.log(data);
+        this.gotoList();
+      }, error => alert(error.message));
     }
   }
+
+  onSignUp() {
+    this.showSignUpSection = !this.showSignUpSection;
+    this.signUpForm.reset();
+    this.form.reset();
+  }
+
+  onCreate() {
+    if (this.signUpForm.valid) {
+      this.employeeService.createUser(this.signUpForm.value).subscribe(data => {
+        alert("Created Successfully");
+        console.log(data);
+      }, error => alert(error.message));
+    }
+    this.showSignUpSection = !this.showSignUpSection;
+    this.form.reset();
+  }
+
   @Input() error: string | null;
 
   @Output() submitEM = new EventEmitter();

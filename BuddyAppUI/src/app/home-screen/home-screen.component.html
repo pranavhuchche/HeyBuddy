@@ -19,11 +19,10 @@
                 <div class="cardsContainer">
                   <mat-card class="listCard" *ngFor="let record of records;">
                     <div class="cardContainer" (click)="openProductDetails(record)">
-                      <img class="cardIconContainer">
                       <span class="cardName">{{record.productName}}</span>
+                      <button class="cardInterestButton" mat-raised-button color="primary" (click)="openDialog()">Interested</button>
                       <span class="cardCost">{{record.cost_from | currency:'INR':'symbol-narrow':'4.2-2'}} - {{record.cost_to | currency:'INR':'symbol-narrow':'4.2-2'}}</span>
                     </div>
-                      <button class="cardInterestButton" mat-raised-button color="primary" (click)="openDialog()">Interested</button>
                   </mat-card>
                 </div>
             </mat-drawer-container>
@@ -140,7 +139,7 @@
                       <mat-form-field class="formField">
                         <mat-label>Leaving From</mat-label>
                         <input matInput placeholder="Contentserv, Kalyani Nagar" formControlName="firstCtrlFindRide"
-                               [(ngModel)]="findRide.pickup" required>
+                               [(ngModel)]="findRidee.pickup" required>
                       </mat-form-field>
                       <div>
                         <button mat-button matStepperNext>Next</button>
@@ -154,7 +153,7 @@
                       <mat-form-field class="formField">
                         <mat-label>Going To</mat-label>
                         <input matInput formControlName="secondCtrlFindRide" placeholder="Eg. Kharadi"
-                               [(ngModel)]="findRide.dropoff" required>
+                               [(ngModel)]="findRidee.dropoff" required>
                       </mat-form-field>
                       <div>
                         <button mat-button matStepperPrevious>Back</button>
@@ -169,7 +168,7 @@
                       <mat-form-field class="formField">
                         <mat-label>Date & Time</mat-label>
                         <input type="datetime-local" placeholder="01-01-2021" matInput formControlName="thirdCtrlFindRide"
-                               [(ngModel)]="findRide.dateTime" required >
+                               [(ngModel)]="findRidee.dateTime" required >
                       </mat-form-field>
 
                       <div>
@@ -185,7 +184,7 @@
                       <mat-form-field class="formField">
                         <mat-label>Number of Seats to book ?</mat-label>
                         <input type="number"  matInput formControlName="fourthCtrlFindRide" placeholder="3"
-                               [(ngModel)]="findRide.numberOfSeats" required>
+                               [(ngModel)]="findRidee.numberOfSeats" required>
                       </mat-form-field>
                       <div>
                         <button mat-button matStepperPrevious>Back</button>

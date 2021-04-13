@@ -19,10 +19,9 @@ export class HomeScreenComponent implements OnInit {
 
   employee: Employee = new Employee();
   offerRide: OfferRide = new OfferRide();
-  findRide: FindRide = new FindRide();
+  findRidee: FindRide = new FindRide();
   submitted = false;
   records = [];
-  isShowProductDetails = false;
   isLinear = false;
   showOfferRide = false;
   showNeedRide = false;
@@ -105,7 +104,7 @@ export class HomeScreenComponent implements OnInit {
   }
 
   findRide() {
-    console.log(this.findRide);
+    console.log(this.findRidee);
   }
 
   gotoList() {
@@ -138,15 +137,6 @@ export class HomeScreenComponent implements OnInit {
       }
     });
   }
-
-/*  openProductDetails(selectedProductData) {
-    this.isShowProductDetails = !this.isShowProductDetails;
-    this.dialog.open(DialogDataExampleDialog, {
-      data: {
-        product: selectedProductData
-      }
-    });
-  }*/
 
   openProductDetails(selectedProductData): void {
     const dialogRef = this.dialog.open(ProductInfoDialog, {
