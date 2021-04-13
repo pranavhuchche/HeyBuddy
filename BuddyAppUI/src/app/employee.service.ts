@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {OfferRide} from './carpool/offer-ride';
 import {FindRide} from './carpool/find-ride';
+import {OrganizeEvent} from './carpool/event-organize';
 
 @Injectable({
   providedIn: 'root'
@@ -72,5 +73,21 @@ export class EmployeeService {
 
   createUser(value: object): Observable<any> {
     return this.http.post(`${this.baseUrl}/createuser`, value);
+  }
+
+  getAllRides(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/getrides/all`);
+  }
+
+  getAllEvents() {
+    return this.http.get(`${this.baseUrl}/getevent/all`);
+  }
+
+  getUserDetails() {
+    return this.http.get(`${this.baseUrl}/getuser/test_user1`);
+  }
+
+  organizeEvent(organizeEvent: OrganizeEvent) {
+    return this.http.post(`${this.baseUrl}/createevent`, organizeEvent, this.httpOptions);
   }
 }

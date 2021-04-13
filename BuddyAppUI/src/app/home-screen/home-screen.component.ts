@@ -9,6 +9,8 @@ import {ProductInfoDialog} from '../product-info-dialog/product-info-dialog';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {OfferRide} from '../carpool/offer-ride';
 import {FindRide} from '../carpool/find-ride';
+import {MatSnackBar, MatTabChangeEvent} from '@angular/material';
+import {OrganizeEvent} from '../carpool/event-organize';
 
 @Component({
   selector: 'app-home-screen',
@@ -20,12 +22,17 @@ export class HomeScreenComponent implements OnInit {
   employee: Employee = new Employee();
   offerRide: OfferRide = new OfferRide();
   findRide: FindRide = new FindRide();
+  organizeEvent: OrganizeEvent = new OrganizeEvent();
   searchedRides = [];
+  allSearchedRides = [];
+  allSearchedEvents = [];
   submitted = false;
   records = [];
-  isLinear = false;
+  showAllRide = false;
   showOfferRide = false;
   showNeedRide = false;
+  showOrganizeEvents = false;
+  showAllEvents = false;
 
   zeroFormControl = new FormControl();
   zeroFormGroup: FormGroup;
@@ -44,8 +51,17 @@ export class HomeScreenComponent implements OnInit {
   fourthFormGroupFindRide: FormGroup;
   fifthFormGroupFindRide: FormGroup;
 
+  firstFormGroupEvent: FormGroup;
+  secondFormGroupEvent: FormGroup;
+  thirdFormGroupEvent: FormGroup;
+  fourthFormGroupEvent: FormGroup;
+  fifthFormGroupEvent: FormGroup;
+
+  selectedTabIndex: 3;
+  userDetails: {};
+
   constructor(private employeeService: EmployeeService,
-              private router: Router, public dialog: MatDialog, private _formBuilder: FormBuilder) {
+              private router: Router, public dialog: MatDialog, private _formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
     this.getList();
   }
 
@@ -87,6 +103,22 @@ export class HomeScreenComponent implements OnInit {
     this.fifthFormGroupFindRide = this._formBuilder.group({
       fifthCtrlFindRide: ['', Validators.required]
     });
+
+    this.firstFormGroupEvent = this._formBuilder.group({
+      firstCtrlEvent: ['', Validators.required]
+    });
+    this.secondFormGroupEvent = this._formBuilder.group({
+      secondCtrlEvent: ['', Validators.required]
+    });
+    this.thirdFormGroupEvent = this._formBuilder.group({
+      thirdCtrlEvent: ['', Validators.required]
+    });
+    this.fourthFormGroupEvent = this._formBuilder.group({
+      fourthCtrlEvent: ['', Validators.required]
+    });
+    this.fifthFormGroupEvent = this._formBuilder.group({
+      fifthCtrlEvent: ['', Validators.required]
+    });
   }
 
   newEmployee(): void {
@@ -112,8 +144,15 @@ export class HomeScreenComponent implements OnInit {
   submitRide() {
     this.employeeService.submitRide(this.offerRide).subscribe(data => {
         console.log(data);
+
       },
       error => console.log(error));
+  }
+
+  openSnackBar(msg) {
+    this._snackBar.open(msg, '', {
+      duration: 500
+    });
   }
 
   searchRide() {
@@ -124,6 +163,37 @@ export class HomeScreenComponent implements OnInit {
           let date = new Date(ride.time);
           ride.time = date.toString();
         });
+      },
+      error => console.log(error));
+  }
+
+  getAllRides() {
+    this.employeeService.getAllRides().subscribe(data => {
+        console.log(data);
+        this.allSearchedRides = data;
+        this.allSearchedRides.forEach(ride => {
+          let date = new Date(ride.time);
+          ride.time = date.toString();
+        });
+      },
+      error => console.log(error));
+  }
+
+  getAllEvents() {
+    this.employeeService.getAllEvents().subscribe(data => {
+        console.log(data);
+        this.allSearchedEvents = data;
+        this.allSearchedEvents.forEach(event => {
+          let date = new Date(event.time);
+          event.time = date.toString();
+        });
+      },
+      error => console.log(error));
+  }
+
+  submitEvent() {
+    this.employeeService.organizeEvent(this.organizeEvent).subscribe(data => {
+        console.log(data);
       },
       error => console.log(error));
   }
@@ -172,5 +242,15 @@ export class HomeScreenComponent implements OnInit {
 
   gotoOfferRide() {
     this.router.navigate(['/offerride']);
+  }
+
+  onTabChanged($event: MatTabChangeEvent) {
+    if (this.selectedTabIndex === 3) {
+      this.employeeService.getUserDetails().subscribe(data => {
+          console.log(data);
+          this.userDetails = data;
+        },
+        error => console.log(error));
+    }
   }
 }

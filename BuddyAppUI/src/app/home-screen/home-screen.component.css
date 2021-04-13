@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #7b50b4;
+  background-color: #1b0a76;
 }
 
 .homeScreenContainer {
@@ -250,7 +250,7 @@ mat-grid-tile {
 
   height: 87vh;
   background-size: cover;
-  background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/carpool.svg) top;
+  background: linear-gradient(to right bottom, rgba(111, 114, 213, 0.8), rgba(40, 180, 133, 0.8)), url(../img/carpool.svg) top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
 .carpool__logo-box {
@@ -272,7 +272,7 @@ mat-grid-tile {
 
 .searchedRidesCardsContainer {
   height: calc(100% - 100px);
-  margin: 5px 5px 0 5px;
+  margin: 2px 2px 0 2px;
 }
 
 .searchedRidesCardContainer {
@@ -282,6 +282,20 @@ mat-grid-tile {
   border: 1px solid #c4bcbc;
   margin-bottom: 5px;
   border-radius: 0.8rem;
+  padding: 8px;
+}
+
+.searchedRidesCardName {
+  display: inline-block;
+  font-size: 1rem;
+  text-align: left;
+  width: 30%;
+}
+
+.searchedRidesCardUserName {
+  display: inline-block;
+  font-size: 0.8rem;
+  width: 40%;
 }
 
 .searchedRidesCardCost {
@@ -297,15 +311,47 @@ mat-grid-tile {
   display: inline-block;
 }
 
-.searchedRidesCardName {
-  display: inline-block;
-  font-size: 1rem;
-  text-align: left;
-  width: 25%;
+
+
+.events {
+  box-sizing: border-box;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+
+  height: 87vh;
+  background-size: cover;
+  background: linear-gradient(to right bottom, rgba(111, 114, 213, 0.8), rgba(40, 180, 133, 0.8)), url(../img/events.jpg) top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+.events__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+
+.profile-card {
+  max-width: 100%;
+  height: 20%;
 }
 
-.searchedRidesCardUserName {
-  display: inline-block;
-  font-size: 1rem;
-  width: 50%;
+.profile-header-image {
+  background-image: url(../img/nat-2.jpg);
+  background-size: cover;
+}
+
+.logoutButton{
+  align: right;
+}
+
+.matCardImage{
+  height: 200%;
+}
+
+.matCardHeader {
 }
