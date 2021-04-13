@@ -28,17 +28,17 @@ public class RideDAO {
 	}
 
 	public List<Ride> getAllRides() {
-		StringBuilder query = new StringBuilder("SELECT r.* , u.name FROM heybuddy.rides r INNER JOIN heybuddy.users u ON r.username = u.username ORDER BY time");
+		StringBuilder query = new StringBuilder("SELECT r.* username , u.name FROM heybuddy.rides r INNER JOIN heybuddy.users u ON r.username = u.username ORDER BY time");
 		return jdbcTemplate.query(query.toString(), new RideRowMapper());
 	}
 	
 	public Ride getRideById(String id) {
-		StringBuilder query = new StringBuilder("SELECT r.*, u.name FROM heybuddy.rides r INNER JOIN heybuddy.users u ON r.username = u.username  WHERE ride_id = " + id);
+		StringBuilder query = new StringBuilder("SELECT r.*, u.name username FROM heybuddy.rides r INNER JOIN heybuddy.users u ON r.username = u.username  WHERE ride_id = " + id);
 		return jdbcTemplate.queryForObject(query.toString(), new RideRowMapper());
 	}
 
 	public List<Ride> searchRide(Ride ride) {
-		StringBuilder query = new StringBuilder("Select r.*, u.name from heybuddy.rides r");
+		StringBuilder query = new StringBuilder("Select r.*, u.name username from heybuddy.rides r");
 		query.append(" INNER JOIN heybuddy.users u ON r.username = u.username ");
 		query.append(" WHERE r.no_of_seats >= ");
 		query.append(ride.getNoOfSeats());
