@@ -13,10 +13,8 @@ export class EmployeeService {
   constructor(private http: HttpClient) {
   }
   private baseUrl = 'http://localhost:8080/heyBuddy';
-  const
   httpOptions = {
     headers: new HttpHeaders({
-      // TODO : remove hardcoded username.
       user: localStorage.getItem("username"),
     })
   };
@@ -75,11 +73,11 @@ export class EmployeeService {
     return this.http.post(`${this.baseUrl}/createuser`, value, this.httpOptions);
   }
 
-  markProductAsInterested(id : string) : Observable<any> {
+  markProductAsInterested(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/mark/insterested/${id}`, this.httpOptions);
   }
 
-  createProduct(value: object) : Observable<any> {
+  createProduct(value: object): Observable<any> {
     return this.http.post(`${this.baseUrl}/createproduct`, value, this.httpOptions);
   }
 
@@ -87,15 +85,16 @@ export class EmployeeService {
     return this.http.get(`${this.baseUrl}/getrides/all`);
   }
 
-  getAllEvents() : Observable<any>  {
+  getAllEvents(): Observable<any>  {
     return this.http.get(`${this.baseUrl}/getevent/all`);
   }
 
-  getUserDetails() : Observable<any>  {
-    return this.http.get(`${this.baseUrl}/getuser/test_user1`);
+  getUserDetails(): Observable<any>  {
+    const user = localStorage.getItem('username');
+    return this.http.get(`${this.baseUrl}/getuser/` + user);
   }
 
-  organizeEvent(organizeEvent: OrganizeEvent) : Observable<any> {
+  organizeEvent(organizeEvent: OrganizeEvent): Observable<any> {
     return this.http.post(`${this.baseUrl}/createevent`, organizeEvent, this.httpOptions);
   }
 }

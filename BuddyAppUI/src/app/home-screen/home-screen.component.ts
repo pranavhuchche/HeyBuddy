@@ -58,9 +58,22 @@ export class HomeScreenComponent implements OnInit {
   thirdFormGroupEvent: FormGroup;
   fourthFormGroupEvent: FormGroup;
   fifthFormGroupEvent: FormGroup;
+  sixthFormGroupEvent: FormGroup;
+  seventhFormGroupEvent: FormGroup;
+  eighthFormGroupEvent: FormGroup;
 
   selectedTabIndex: 3;
   userDetails: {};
+  fourthFormEventFormControl = new FormControl();
+  fifthFormEventFormControl = new FormControl();
+  sixthFormEventFormControl = new FormControl();
+  eighthFormEventFormControl = new FormControl();
+
+  fourthFormEventControlList: string[] = ['ONLINE', 'PHYSICAL'];
+  fifthFormEventControlList: string[] = ['INDIVIDUAL', 'TEAM'];
+  sixthFormEventControlList: boolean[] = [true, false];
+  eighthFormEventControlList: boolean[] = [true, false];
+
 
   constructor(private employeeService: EmployeeService,
               private router: Router, public dialog: MatDialog, private _formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
@@ -116,10 +129,19 @@ export class HomeScreenComponent implements OnInit {
       thirdCtrlEvent: ['', Validators.required]
     });
     this.fourthFormGroupEvent = this._formBuilder.group({
-      fourthCtrlEvent: ['', Validators.required]
+      fourthCtrlEvent: ['']
     });
     this.fifthFormGroupEvent = this._formBuilder.group({
-      fifthCtrlEvent: ['', Validators.required]
+      fifthCtrlEvent: ['']
+    });
+    this.sixthFormGroupEvent = this._formBuilder.group({
+      sixthCtrlEvent: ['']
+    });
+    this.seventhFormGroupEvent = this._formBuilder.group({
+      seventhCtrlEvent: ['', Validators.required]
+    });
+    this.eighthFormGroupEvent = this._formBuilder.group({
+      eighthCtrlEvent: ['']
     });
   }
 

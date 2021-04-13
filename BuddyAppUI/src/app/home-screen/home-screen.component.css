@@ -317,6 +317,14 @@ mat-grid-tile {
 }
 
 
+.share {
+  box-sizing: border-box;
+  height: 84vh;
+  background-size: cover;
+  background: linear-gradient(to right bottom, rgba(111, 114, 213, 0.8), rgba(40, 180, 133, 0.8)), url(../img/share.jpg) top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+
 
 .events {
   box-sizing: border-box;

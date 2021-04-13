@@ -4,22 +4,26 @@
       <mat-tab-group class="matTabGroup" id="tabGroup" [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChanged($event);">
         <mat-tab class="matTab" label="Give & Take Corner" color="primary">
           <div class="homeScreenHeader">
-              <mat-icon class="createButton" (click)="createProduct()">note_add</mat-icon>
+            <mat-icon class="createButton" (click)="createProduct()">note_add</mat-icon>
           </div>
           <div class="leftSideNavigationContainer">
             <mat-drawer-container class="example-container" autosize>
+              <div class="share">
                 <div class="cardsContainer">
                   <mat-card class="listCard" *ngFor="let record of records;">
                     <div class="cardContainer" (click)="openProductDetails(record)">
                       <span class="cardName">{{record.productName}}</span>
                       <span class="cardCost">{{record.cost_from | currency:'INR':'symbol-narrow':'4.2-2'}} - {{record.cost_to | currency:'INR':'symbol-narrow':'4.2-2'}}</span>
                     </div>
-                      <button class="cardInterestButton" [disabled]="record.isInterested" mat-raised-button color="primary" (click)="openDialog(record)">Interested</button>
+                    <button class="cardInterestButton" [disabled]="record.isInterested" mat-raised-button color="primary" (click)="openDialog(record)">Interested</button>
                   </mat-card>
                 </div>
+              </div>
             </mat-drawer-container>
-          </div>
+              </div>
         </mat-tab>
+
+
         <mat-tab label="Car Pool">
           <div class="carpool_main">
             <div class="carpool">
@@ -328,15 +332,84 @@
 
                   <mat-step [stepControl]="fourthFormGroupEvent">
                     <form [formGroup]="fourthFormGroupEvent">
-                      <ng-template matStepLabel>Vehicle Type</ng-template>
+                      <ng-template matStepLabel>Event Type</ng-template>
                       <mat-form-field class="formField">
-                        <mat-label>Type of Vehicle</mat-label>
-                        <mat-select [formControl]="fourthCtrlEvent" [(ngModel)]="offerRide.vehicleType">
-                          <mat-option *ngFor="let zeroFormControlListItem of zeroFormControlList"
-                                      [value]="zeroFormControlListItem">{{zeroFormControlListItem}}</mat-option>
+                        <mat-label>Type of Event</mat-label>
+
+                        <mat-select [formControl]="fourthFormEventFormControl" [(ngModel)]="organizeEvent.eventType">
+                          <mat-option *ngFor="let fourthFormEventControlListItem of fourthFormEventControlList"
+                                      [value]="fourthFormEventControlListItem">{{fourthFormEventControlListItem}}</mat-option>
                         </mat-select>
                       </mat-form-field>
                       <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="fifthFormGroupEvent">
+                    <form [formGroup]="fifthFormGroupEvent">
+                      <ng-template matStepLabel>Participation Type</ng-template>
+                      <mat-form-field class="formField">
+                        <mat-label>Type of Vehicle</mat-label>
+
+                        <mat-select [formControl]="fifthFormEventFormControl" [(ngModel)]="organizeEvent.participationType">
+                          <mat-option *ngFor="let fifthFormEventControlListItem of fifthFormEventControlList"
+                                      [value]="fifthFormEventControlListItem">{{fifthFormEventControlListItem}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="sixthFormGroupEvent">
+                    <form [formGroup]="sixthFormGroupEvent">
+                      <ng-template matStepLabel>Transportation</ng-template>
+                      <mat-form-field class="formField">
+                        <mat-label>Is Transportation Available ?</mat-label>
+                        <mat-select [formControl]="sixthFormEventFormControl" [(ngModel)]="organizeEvent.isTransportationAvailable">
+                          <mat-option *ngFor="let sixthFormEventControlListItem of sixthFormEventControlList"
+                                      [value]="sixthFormEventControlListItem">{{sixthFormEventControlListItem}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="seventhFormGroupEvent">
+                    <form [formGroup]="seventhFormGroupEvent">
+                      <ng-template matStepLabel>Charges</ng-template>
+                      <mat-form-field class="formField">
+                        <mat-label>Charges</mat-label>
+                        <input type="number" matInput formControlName="seventhCtrlEvent" placeholder="Individual/Team"
+                               [(ngModel)]="organizeEvent.charges" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="eighthFormGroupEvent">
+                    <form [formGroup]="eighthFormGroupEvent">
+                      <ng-template matStepLabel>Meal Details</ng-template>
+                      <mat-form-field class="formField">
+                        <mat-label>Is Meal Provided ? </mat-label>
+                        <mat-select [formControl]="eighthFormEventFormControl" [(ngModel)]="organizeEvent.isMealProvided">
+                          <mat-option *ngFor="let eighthFormEventControlListItem of eighthFormEventControlList"
+                                      [value]="eighthFormEventControlListItem">{{eighthFormEventControlListItem}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
                         <button mat-button matStepperNext>Next</button>
                       </div>
                     </form>
