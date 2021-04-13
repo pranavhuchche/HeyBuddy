@@ -25,9 +25,11 @@ public class SetupDatabaseDAO {
 		Resource resourceProducts = new ClassPathResource("ProductsDDL.sql");
 		Resource resourceUsersProducts = new ClassPathResource("UserProductInterestDDL.sql");
 		Resource resourceRides = new ClassPathResource("RidesDLL.sql");
+		Resource resourceEvents = new ClassPathResource("EventsDLL.sql");
 
 		ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
-		databasePopulator.addScripts(resourceSchemaCreation, resourceUsers, resourceProducts, resourceUsersProducts, resourceRides);
+		databasePopulator.addScripts(resourceSchemaCreation, resourceUsers, resourceProducts, resourceUsersProducts,
+				resourceRides, resourceEvents);
 		databasePopulator.execute(dataSource);
 	}
 
