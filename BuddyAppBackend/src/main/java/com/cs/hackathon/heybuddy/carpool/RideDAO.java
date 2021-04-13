@@ -33,7 +33,7 @@ public class RideDAO {
 	}
 	
 	public Ride getRideById(String id) {
-		StringBuilder query = new StringBuilder("SELECT * FROM heybuddy.rides WHERE ride_id = " + id + " ORDER BY time");
+		StringBuilder query = new StringBuilder("SELECT * FROM heybuddy.rides WHERE ride_id = " + id);
 		return jdbcTemplate.queryForObject(query.toString(), new RideRowMapper());
 	}
 
@@ -48,6 +48,12 @@ public class RideDAO {
 			query.append(" AND vehicle_type = ");			
 			query.append(ride.getVehicleType().ordinal());
 		}
+		query.append(" AND r.is_cancelled = false ");
 		return jdbcTemplate.query(query.toString(), new RideRowMapper());
 	}
+	
+	public Ride cancelRide (Long rideId) {
+		StringBuilder query = new StringBuilder("UPDATE heybuddy.rides SET is_cancelled = true where ride_id = ? RETURNING *");
+		return jdbcTemplate.queryForObject(query.toString(), new Object[] { rideId }, new RideRowMapper());
+	}   
 }

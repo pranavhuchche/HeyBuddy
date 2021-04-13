@@ -25,5 +25,9 @@ public class RidesService {
 	public List<Ride> searchRide(Ride ride) {
 		return rideDAO.searchRide(ride);
 	}
+	
+	public Ride cancelRide (Long rideId) {
+		return rideDAO.cancelRide(rideId);
+	}
 
 }

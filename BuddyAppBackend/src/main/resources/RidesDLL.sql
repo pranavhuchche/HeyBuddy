@@ -8,4 +8,5 @@ vehicle_type smallint,
 time bigint,
 charges NUMERIC ( 999, 2 ),
 no_of_seats smallint,
+is_cancelled boolean default false,
 username VARCHAR ( 50 ) REFERENCES heybuddy.users (username));

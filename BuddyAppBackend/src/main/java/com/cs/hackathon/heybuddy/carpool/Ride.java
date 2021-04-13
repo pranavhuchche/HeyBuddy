@@ -10,6 +10,7 @@ public class Ride {
 	private Long time;
 	private Long charges;
 	private Integer noOfSeats;
+	private boolean isCancelled;
 
 	public final String getRideId() {
 		return rideId;
@@ -82,6 +83,17 @@ public class Ride {
 	public final void setNoOfSeats(Integer noOfSeats) {
 		this.noOfSeats = noOfSeats;
 	}
+	
+
+	public final boolean isCancelled() {
+		return isCancelled;
+	}
+
+	public final void setCancelled(boolean isCancelled) {
+		this.isCancelled = isCancelled;
+	}
+
+
 
 	public enum VehicleType {
 

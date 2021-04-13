@@ -20,6 +20,7 @@ public class RideRowMapper implements RowMapper<Ride> {
 		ride.setTime(rs.getLong("time"));
 		ride.setCharges(rs.getLong("charges"));
 		ride.setNoOfSeats(rs.getInt("no_of_seats"));
+		ride.setCancelled(rs.getBoolean("is_cancelled"));
 		ride.setUserName(rs.getString("username"));
 		return ride;
 	}
