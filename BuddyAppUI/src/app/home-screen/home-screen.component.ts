@@ -292,4 +292,11 @@ export class HomeScreenComponent implements OnInit {
         error => console.log(error));
     }
   }
+
+  saveUser() {
+    this.employeeService.saveUser(this.userDetails).subscribe(data => {
+        console.log(data);
+      },
+      error => console.log(error));
+  }
 }
