@@ -21,7 +21,7 @@ public class GetProductRowMapper implements RowMapper<GetProduct> {
 		product.setStatus(rs.getBoolean(7));
 		product.setListingDate(rs.getLong(8));
 		product.setListingType(ListingType.valueOf(rs.getInt(9)));
-		product.setUsername(rs.getString(10));
+		product.setUsername(rs.getString(12));
 		product.setIsInterested(rs.getBoolean(11));
 		return product;
 	}

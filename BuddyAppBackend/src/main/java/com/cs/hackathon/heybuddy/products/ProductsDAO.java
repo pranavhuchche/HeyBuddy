@@ -29,11 +29,12 @@ public class ProductsDAO {
 		Integer listingType = model.getListingType();
 		String sortOrder = "desc".equals(model.getSortOrder()) ? "desc" : "asc";
 		
-		StringBuilder query = new StringBuilder("Select *, "
+		StringBuilder query = new StringBuilder("Select pr.*, "
 				+ "(SELECT CASE WHEN (Select count(*) from heybuddy.users_products_interest upi where upi.username = '");
 		query.append(username);
-		query.append("' AND pr.product_id = upi.product_id ) > 0 THEN true ELSE false END) is_interested"
-				+ " from heybuddy.products pr WHERE pr.status = true");
+		query.append("' AND pr.product_id = upi.product_id ) > 0 THEN true ELSE false END) is_interested, u.name from heybuddy.products pr " );
+		query.append(" INNER JOIN heybuddy.users u ON pr.username = u.username ");
+		query.append(" WHERE pr.status = true");
 		if (searchText != null && !"".equals(searchText)) {
 			query.append(" AND (pr.product_name ilike '%" + searchText + "%' OR pr.description ilike '%" + searchText + "%')");
 		}
