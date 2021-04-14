@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c241d2-3512-4741-8de6-2c64deeb3e62" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home-screen/home-screen.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/home-screen/home-screen.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home-screen/home-screen.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/home-screen/home-screen.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home-screen/home-screen.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/home-screen/home-screen.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-info-dialog/product-info-dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/product-info-dialog/product-info-dialog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-info-dialog/product-info-dialog.html" beforeDir="false" afterPath="$PROJECT_DIR$/product-info-dialog/product-info-dialog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-info-dialog/product-info-dialog.ts" beforeDir="false" afterPath="$PROJECT_DIR$/product-info-dialog/product-info-dialog.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,23 +17,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/product-info-dialog/product-info-dialog.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-                <element signature="e#174#238#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="244" column="7" lean-forward="true" selection-start-line="244" selection-start-column="7" selection-end-line="244" selection-end-column="7" />
+            <state relative-caret-position="457">
+              <caret line="301" column="40" lean-forward="true" selection-start-line="301" selection-start-column="40" selection-end-line="301" selection-end-column="40" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
                 <element signature="e#390#467#0" expanded="true" />
@@ -47,19 +30,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/product-info-dialog/product-info-dialog.html">
+        <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/product-info-dialog/product-info-dialog.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="209">
+              <caret line="455" column="76" selection-start-line="455" selection-start-column="63" selection-end-line="455" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -76,8 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mat-form-field</find>
-      <find>ReactiveFormsModule</find>
       <find>findRidee</find>
       <find>findRide</find>
       <find>FindRide.</find>
@@ -106,6 +78,8 @@
       <find>productDescription</find>
       <find>productInfoContainer</find>
       <find>productname</find>
+      <find>logout</find>
+      <find>gotoList</find>
     </findStrings>
     <dirStrings>
       <dir>D:\project\Angular8-SpringBoot-CRUD-Tutorial-master\angular8-springboot-client\src\app\create-employee</dir>
@@ -140,19 +114,19 @@
         <option value="$PROJECT_DIR$/create-product/create-product-dialog.html" />
         <option value="$PROJECT_DIR$/create-product/create-product-dialog.ts" />
         <option value="$PROJECT_DIR$/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/home-screen/home-screen.component.html" />
         <option value="$PROJECT_DIR$/employee.service.ts" />
         <option value="$PROJECT_DIR$/product-info-dialog/product-info-dialog.ts" />
         <option value="$PROJECT_DIR$/home-screen/home-screen.component.css" />
         <option value="$PROJECT_DIR$/product-info-dialog/product-info-dialog.html" />
         <option value="$PROJECT_DIR$/product-info-dialog/product-info-dialog.css" />
+        <option value="$PROJECT_DIR$/home-screen/home-screen.component.html" />
         <option value="$PROJECT_DIR$/home-screen/home-screen.component.ts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="87" />
-    <option name="y" value="412" />
+    <option name="x" value="86" />
+    <option name="y" value="411" />
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
@@ -181,11 +155,6 @@
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="create-product" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="employee-details" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
@@ -248,11 +217,12 @@
       <workItem from="1617397768452" duration="6942000" />
       <workItem from="1617416802754" duration="28136000" />
       <workItem from="1618335624126" duration="28370000" />
+      <workItem from="1618376948362" duration="290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86612000" />
+    <option name="totallyTimeSpent" value="86902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -304,9 +274,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/employee-details/employee-details.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/employee-details/employee-details.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/update-employee/update-employee.component.css">
@@ -394,13 +361,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/username/username.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/username/username.ts" />
     <entry file="file://$PROJECT_DIR$/../../node_modules/@angular/common/http/http.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -486,9 +447,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/product1.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/img/product1.svg" />
     <entry file="file://$PROJECT_DIR$/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -508,16 +467,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/employee.spec.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login-page/login-page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login-page/login-page.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -543,10 +492,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/product-info-dialog/product-info-dialog.css">
+    <entry file="file://$PROJECT_DIR$/product-info-dialog/product-info-dialog.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="238">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#174#238#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -557,31 +510,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/product-info-dialog/product-info-dialog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/employee-details/employee-details.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="63" lean-forward="true" selection-start-line="14" selection-end-line="15" />
+        <state relative-caret-position="209">
+          <caret line="455" column="76" selection-start-line="455" selection-start-column="63" selection-end-line="455" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login-page/login-page.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="37" column="38" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home-screen/home-screen.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="244" column="7" lean-forward="true" selection-start-line="244" selection-start-column="7" selection-end-line="244" selection-end-column="7" />
+        <state relative-caret-position="457">
+          <caret line="301" column="40" lean-forward="true" selection-start-line="301" selection-start-column="40" selection-end-line="301" selection-end-column="40" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
             <element signature="e#390#467#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/product-info-dialog/product-info-dialog.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-            <element signature="e#174#238#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -226,6 +226,11 @@ export class HomeScreenComponent implements OnInit {
     this.router.navigate(['/employees']);
   }
 
+  gotoLoginPage() {
+    this.router.navigate(['/login']);
+  }
+
+
   getList() {
     this.employeeService.getListData()
       .subscribe(data => {
@@ -291,5 +296,10 @@ export class HomeScreenComponent implements OnInit {
         },
         error => console.log(error));
     }
+  }
+
+  logoutClicked() {
+    localStorage.removeItem("username");
+    this.gotoLoginPage();
   }
 }
