@@ -464,14 +464,14 @@
             <div class="card" *ngIf="userDetails">
               <div class="container">
                 <h4><b>My Bio</b></h4>
-                <div contenteditable="true" (input)="userDetails.bio = $event.target.innerText">{{userDetails.bio}}</div>
+                <div contenteditable="true" (input)="userDetails.bio = $event.target.innerText">{{userDetails.bio == "null" ? "" : userDetails.bio}}</div>
                 <button mat-button class="editBtn" (click)="saveUser()">SAVE</button>
               </div>
             </div>
             <div class="card" *ngIf="userDetails">
               <div class="container">
                 <h4><b>My Hobbies</b></h4>
-                <div contenteditable="true" (input)="userDetails.hobbies = $event.target.innerText">{{userDetails.hobbies}}</div>
+                <div contenteditable="true" (input)="userDetails.hobbies = $event.target.innerText">{{userDetails.hobbies == "null" ? "" : userDetails.hobbies}}</div>
                 <button mat-button class="editBtn" (click)="saveUser()">SAVE</button>
               </div>
             </div>
