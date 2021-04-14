@@ -70,7 +70,7 @@ export class EmployeeService {
   }
 
   createUser(value: object): Observable<any> {
-    return this.http.post(`${this.baseUrl}/createuser`, value, this.httpOptions);
+    return this.http.post(`${this.baseUrl}/createuser`, value);
   }
 
   markProductAsInterested(id: string): Observable<any> {
