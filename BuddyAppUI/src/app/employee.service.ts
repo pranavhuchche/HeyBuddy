@@ -97,4 +97,8 @@ export class EmployeeService {
   organizeEvent(organizeEvent: OrganizeEvent): Observable<any> {
     return this.http.post(`${this.baseUrl}/createevent`, organizeEvent, this.httpOptions);
   }
+
+  saveUser(userDetails: {}): Observable<any> {
+    return this.http.post(`${this.baseUrl}/saveuser`, userDetails);
+  }
 }

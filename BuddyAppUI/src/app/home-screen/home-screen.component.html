@@ -446,29 +446,36 @@
         </mat-tab>
 
         <mat-tab label="My Profile">
-          <mat-card class="profile-card" *ngIf="userDetails">
-            <mat-card-header class="matCardHeader">
-              <div>
+          <div>
+            <mat-card class="profile-card" *ngIf="userDetails">
+              <mat-card-header class="matCardHeader">
                 <div mat-card-avatar class="profile-header-image"></div>
                 <mat-card-title>{{userDetails.name}}</mat-card-title>
                 <mat-card-subtitle>{{userDetails.email}}</mat-card-subtitle>
-              </div>
-              <button mat-button class="logoutButton" (click)="logoutClicked()">LOGOUT</button>
-            </mat-card-header>
-            <img mat-card-image class="matCardImage" src="../../assets/nat-6.jpg" alt="Photo of User">
-            <mat-card-content>
-              <p>
-                {{userDetails.bio}}
-              </p>
-              <p>
-                {{userDetails.hobbies}}
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button>EDIT</button>
-            </mat-card-actions>
-          </mat-card>
+                <div class="logoutButtonContainer">
+                  <button mat-raised-button class="logoutButton" (click)="logoutClicked()">LOGOUT</button>
+                </div>
+              </mat-card-header>
+              <img mat-card-image class="matCardImage" src="../../assets/nat-6.jpg" alt="Photo of User">
+            </mat-card>
+          </div>
 
+          <div style="display:flex; flex-direction: row;">
+            <div class="card" *ngIf="userDetails">
+              <div class="container">
+                <h4><b>My Bio</b></h4>
+                <div contenteditable="true" (input)="userDetails.bio = $event.target.innerText">{{userDetails.bio}}</div>
+                <button mat-button class="editBtn" (click)="saveUser()">SAVE</button>
+              </div>
+            </div>
+            <div class="card" *ngIf="userDetails">
+              <div class="container">
+                <h4><b>My Hobbies</b></h4>
+                <div contenteditable="true" (input)="userDetails.hobbies = $event.target.innerText">{{userDetails.hobbies}}</div>
+                <button mat-button class="editBtn" (click)="saveUser()">SAVE</button>
+              </div>
+            </div>
+          </div>
         </mat-tab>
       </mat-tab-group>
     </div>
