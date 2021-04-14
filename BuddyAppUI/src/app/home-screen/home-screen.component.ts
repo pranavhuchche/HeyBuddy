@@ -175,7 +175,7 @@ export class HomeScreenComponent implements OnInit {
 
   openSnackBar(msg) {
     this._snackBar.open(msg, '', {
-      duration: 500
+      duration: 1000
     });
   }
 

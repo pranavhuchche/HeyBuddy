@@ -95,6 +95,7 @@ export class EmployeeService {
   }
 
   organizeEvent(organizeEvent: OrganizeEvent): Observable<any> {
+    organizeEvent.time = new Date(organizeEvent.dateTime).getTime();
     return this.http.post(`${this.baseUrl}/createevent`, organizeEvent, this.httpOptions);
   }
 

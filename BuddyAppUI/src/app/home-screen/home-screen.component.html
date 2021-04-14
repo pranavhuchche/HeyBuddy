@@ -255,7 +255,7 @@
                   <mat-card class="searchedRidesListCard" *ngFor="let searchedRide of allSearchedRides;">
                     <div class="searchedRidesCardContainer">
                       <span class="searchedRidesCardName">{{searchedRide.pickUpLocation}} - {{searchedRide.dropOffLocation}}</span>
-                      <button class="searchedRidesCardInterestButton" mat-raised-button color="primary" (click)="openDialog()">Interested</button>
+                      <button class="searchedRidesCardInterestButton" mat-raised-button color="primary" (click)="openSnackBar('Your details are sent to ride owner successfully !')">Interested</button>
                       <span class="searchedRidesCardCost">{{searchedRide.charges | currency:'INR':'symbol-narrow':'3.2-2'}}</span>
                       <span class="searchedRidesCardUserName">{{searchedRide.userName}} driving @
                         {{searchedRide.time | date: 'short'}}</span>
@@ -305,7 +305,7 @@
                     <form [formGroup]="secondFormGroupEvent">
                       <mat-form-field class="formField">
                         <mat-label>Date & Time</mat-label>
-                        <input type="datetime-local" placeholder="01-01-2021" matInput formControlName="secondCtrlEvent"
+                        <input type="datetime-local" matInput formControlName="secondCtrlEvent"
                                [(ngModel)]="organizeEvent.dateTime" required >
                       </mat-form-field>
 
@@ -431,7 +431,7 @@
                   <mat-card class="searchedRidesListCard" *ngFor="let searchedEvent of allSearchedEvents;">
                     <div class="searchedRidesCardContainer">
                       <span class="searchedRidesCardName">{{searchedEvent.discription}}</span>
-                      <button class="searchedRidesCardInterestButton" mat-raised-button color="primary" (click)="openDialog()">Interested</button>
+                      <button class="searchedRidesCardInterestButton" mat-raised-button color="primary" (click)="openSnackBar('Your details are sent to organizer successfully !')">Interested</button>
                       <span class="searchedRidesCardCost">{{searchedEvent.charges | currency:'INR':'symbol-narrow':'3.2-2'}}</span>
                       <span class="searchedRidesCardUserName">at {{searchedEvent.location}} on
                         {{searchedEvent.time | date: 'short'}}</span>
