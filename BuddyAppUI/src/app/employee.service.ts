@@ -10,17 +10,16 @@ import {OrganizeEvent} from './carpool/event-organize';
 })
 export class EmployeeService {
 
+  constructor(private http: HttpClient) {
+  }
   private baseUrl = 'http://localhost:8080/heyBuddy';
   const
   httpOptions = {
     headers: new HttpHeaders({
       // TODO : remove hardcoded username.
-      user: 'test_user1'
+      user: localStorage.getItem("username"),
     })
   };
-
-  constructor(private http: HttpClient) {
-  }
 
   getEmployee(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
@@ -43,11 +42,12 @@ export class EmployeeService {
   }
 
   getListData(): Observable<any> {
-    return this.http.post(`${this.baseUrl}/getproducts/all`, {
+    let requestBody = {
       "searchText": "",
       "sortOrder": "",
       "listingType": 0
-    }, this.httpOptions);
+    };
+    return this.http.post(`${this.baseUrl}/getproducts/all`, requestBody, this.httpOptions);
   }
 
   submitRide(offerRide: OfferRide): Observable<any> {
@@ -72,22 +72,30 @@ export class EmployeeService {
   }
 
   createUser(value: object): Observable<any> {
-    return this.http.post(`${this.baseUrl}/createuser`, value);
+    return this.http.post(`${this.baseUrl}/createuser`, value, this.httpOptions);
+  }
+
+  markProductAsInterested(id : string) : Observable<any> {
+    return this.http.get(`${this.baseUrl}/mark/insterested/${id}`, this.httpOptions);
+  }
+
+  createProduct(value: object) : Observable<any> {
+    return this.http.post(`${this.baseUrl}/createproduct`, value, this.httpOptions);
   }
 
   getAllRides(): Observable<any> {
     return this.http.get(`${this.baseUrl}/getrides/all`);
   }
 
-  getAllEvents() {
+  getAllEvents() : Observable<any>  {
     return this.http.get(`${this.baseUrl}/getevent/all`);
   }
 
-  getUserDetails() {
+  getUserDetails() : Observable<any>  {
     return this.http.get(`${this.baseUrl}/getuser/test_user1`);
   }
 
-  organizeEvent(organizeEvent: OrganizeEvent) {
+  organizeEvent(organizeEvent: OrganizeEvent) : Observable<any> {
     return this.http.post(`${this.baseUrl}/createevent`, organizeEvent, this.httpOptions);
   }
 }

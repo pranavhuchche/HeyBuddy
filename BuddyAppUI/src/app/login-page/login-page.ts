@@ -35,7 +35,7 @@ export class LoginFormComponent {
   submit() {
     if (this.form.valid) {
       this.employeeService.validateUser(this.form.value).subscribe(data => {
-        console.log(data);
+        localStorage.setItem("username", data.username);
         this.gotoList();
       }, error => alert(error.message));
     }

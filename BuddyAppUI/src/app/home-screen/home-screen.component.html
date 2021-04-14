@@ -4,25 +4,17 @@
       <mat-tab-group class="matTabGroup" id="tabGroup" [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChanged($event);">
         <mat-tab class="matTab" label="Give & Take Corner" color="primary">
           <div class="homeScreenHeader">
-            <mat-icon class="navigationToggleOpen" *ngIf="!showFiller" aria-hidden="false" (click)="drawer.toggle(); showFiller = !showFiller">swap_horiz</mat-icon>
-            <mat-icon class="navigationToggleClose" *ngIf="showFiller" (click)="drawer.toggle(); showFiller = !showFiller">swap_horiz</mat-icon>
+              <mat-icon class="createButton" (click)="createProduct()">note_add</mat-icon>
           </div>
           <div class="leftSideNavigationContainer">
             <mat-drawer-container class="example-container" autosize>
-              <mat-drawer #drawer class="example-sidenav" mode="side" opened="!showFiller">
-                <p>Auto-resizing sidenav</p>
-                <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-                <button (click)="showFiller = !showFiller" mat-raised-button>
-                  Toggle extra text
-                </button>
-              </mat-drawer>
                 <div class="cardsContainer">
                   <mat-card class="listCard" *ngFor="let record of records;">
                     <div class="cardContainer" (click)="openProductDetails(record)">
                       <span class="cardName">{{record.productName}}</span>
-                      <button class="cardInterestButton" mat-raised-button color="primary" (click)="openDialog()">Interested</button>
                       <span class="cardCost">{{record.cost_from | currency:'INR':'symbol-narrow':'4.2-2'}} - {{record.cost_to | currency:'INR':'symbol-narrow':'4.2-2'}}</span>
                     </div>
+                      <button class="cardInterestButton" [disabled]="record.isInterested" mat-raised-button color="primary" (click)="openDialog(record)">Interested</button>
                   </mat-card>
                 </div>
             </mat-drawer-container>

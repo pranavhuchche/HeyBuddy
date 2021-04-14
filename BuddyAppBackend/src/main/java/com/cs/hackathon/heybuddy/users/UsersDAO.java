@@ -49,7 +49,7 @@ public class UsersDAO {
 			throw new Exception("User or Password is incorrect.");
 		}
 		Map<String,String> response = new HashMap<>();
-		response.put("username ", username);
+		response.put("username", username);
 		return response;
 	}
 	

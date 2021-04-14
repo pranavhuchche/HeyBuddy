@@ -1,0 +1,23 @@
+.productInfoView {
+  height: calc(100% - 50px);
+}
+
+.productImage {
+  float: left;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.productName {
+  font-size: 16px;
+  text-align: center;
+  float: right;
+  display: inline-block;
+}
+
+.productDescription {
+  display: inline-block;
+}
+

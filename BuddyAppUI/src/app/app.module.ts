@@ -20,6 +20,7 @@ import {ProductInfoDialog} from './product-info-dialog/product-info-dialog';
 import {OfferRideComponent} from './carpool/carpool.component';
 import { LoginFormComponent} from './login-page/login-page';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {CreateProductDialog} from './create-product/create-product-dialog'
 
 import {
   MatAutocompleteModule,
@@ -59,6 +60,7 @@ import {
     ProductInfoDialog,
     OfferRideComponent,
     LoginFormComponent,
+    CreateProductDialog,
 ],
   imports: [
     BrowserModule,
@@ -103,7 +105,7 @@ import {
     ReactiveFormsModule,
   ],
   providers: [],
-  entryComponents: [ConfirmationDialog,ProductInfoDialog],
+  entryComponents: [ConfirmationDialog,ProductInfoDialog, CreateProductDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

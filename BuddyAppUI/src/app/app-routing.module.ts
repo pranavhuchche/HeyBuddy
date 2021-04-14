@@ -1,4 +1,3 @@
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,7 +13,6 @@ const routes: Routes = [
   { path: 'offerride', component: OfferRideComponent },
   { path: 'home', component: HomeScreenComponent },
   { path: 'update/:id', component: UpdateEmployeeComponent },
-  { path: 'details/:id', component: EmployeeDetailsComponent },
 ];
 
 @NgModule({

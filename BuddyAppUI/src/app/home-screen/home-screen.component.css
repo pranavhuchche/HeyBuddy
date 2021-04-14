@@ -50,6 +50,10 @@ body::-webkit-scrollbar {
   overflow: hidden;
 }
 
+.createButton {
+  height: 20px;
+}
+
 .homeScreenHeader {
   height: 20px;
   width: 100%;
@@ -324,7 +328,7 @@ mat-grid-tile {
 
   height: 87vh;
   background-size: cover;
-  background: linear-gradient(to right bottom, rgba(111, 114, 213, 0.8), rgba(40, 180, 133, 0.8)), url(../img/events.jpg) top;
+  background: linear-gradient(to right bottom, rgba(111, 114, 213, 0.8), rgba(40, 180, 133, 0.8)), url(../img/carpool.svg) top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
 .events__text-box {
@@ -354,4 +358,10 @@ mat-grid-tile {
 }
 
 .matCardHeader {
+}
+
+.cardContainer {
+  width: 90%;
+  padding-top: 6px;
+  display: inline-block;
 }

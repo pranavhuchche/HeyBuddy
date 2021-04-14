@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { VERSION, MatDialogRef, MatDialog, MatSnackBar, MAT_DIALOG_DATA } from '@angular/material';
+import {EmployeeService} from "../employee.service";
 
 @Component({
   selector: 'confirmation-dialog',
@@ -11,7 +12,7 @@ export class ConfirmationDialog {
   cancelButtonText = "Cancel"
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: any,
-    private dialogRef: MatDialogRef<ConfirmationDialog>) {
+    private dialogRef: MatDialogRef<ConfirmationDialog>, private employeeService: EmployeeService,) {
     if(data){
       this.message = data.message || this.message;
       if (data.buttonText) {
@@ -24,5 +25,4 @@ export class ConfirmationDialog {
   onConfirmClick(): void {
     this.dialogRef.close(true);
   }
-
 }

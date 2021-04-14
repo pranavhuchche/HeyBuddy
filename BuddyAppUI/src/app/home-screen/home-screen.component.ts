@@ -11,6 +11,7 @@ import {OfferRide} from '../carpool/offer-ride';
 import {FindRide} from '../carpool/find-ride';
 import {MatSnackBar, MatTabChangeEvent} from '@angular/material';
 import {OrganizeEvent} from '../carpool/event-organize';
+import {CreateProductDialog} from '../create-product/create-product-dialog'
 
 @Component({
   selector: 'app-home-screen',
@@ -50,6 +51,7 @@ export class HomeScreenComponent implements OnInit {
   thirdFormGroupFindRide: FormGroup;
   fourthFormGroupFindRide: FormGroup;
   fifthFormGroupFindRide: FormGroup;
+  selectedProductId: "";
 
   firstFormGroupEvent: FormGroup;
   secondFormGroupEvent: FormGroup;
@@ -210,18 +212,24 @@ export class HomeScreenComponent implements OnInit {
       }, error => console.log(error));
   }
 
-   openDialog() {
+   openDialog(data) {
+    this.selectedProductId = data.productId;
     const dialogRef = this.dialog.open(ConfirmationDialog,{
       data:{
-        message: 'Are you sure want to delete?',
+        message: 'Are you Interested?',
         buttonText: {
-          ok: 'Save',
+          ok: 'yes',
           cancel: 'No'
         }
       }
     });
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
+        this.employeeService.markProductAsInterested(this.selectedProductId)
+          .subscribe(data => {
+            console.log(data);
+            this.getList();
+          }, error => console.log(error));
         const a = document.createElement('a');
         a.click();
         a.remove();
@@ -231,12 +239,20 @@ export class HomeScreenComponent implements OnInit {
 
   openProductDetails(selectedProductData): void {
     const dialogRef = this.dialog.open(ProductInfoDialog, {
-      width: '250px',
+      width: '80%',
+      height: '80%',
       data: {product: selectedProductData}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+    });
+  }
+
+  createProduct() {
+    const dialogRef = this.dialog.open(CreateProductDialog, {});
+    dialogRef.afterClosed().subscribe(result => {
+      this.getList();
     });
   }
 
