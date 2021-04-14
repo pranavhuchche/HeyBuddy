@@ -11,17 +11,22 @@ import {EmployeeService} from "../employee.service";
 })
 
 export class ProductInfoDialog {
-  productMarkedInterested = false;
+  selectedProductData = {};
+  bIsProductInterested = false;
   constructor(
     public dialogRef: MatDialogRef<ProductInfoDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData, private employeeService: EmployeeService) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, private employeeService: EmployeeService) {
+    this.selectedProductData = data["product"];
+    this.bIsProductInterested = data["product"].isInterested;
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  markInterested(id) : void {
-    this.employeeService.markProductAsInterested(id).subscribe(data => {
+  markInterested() : void {
+    this.employeeService.markProductAsInterested(this.selectedProductData["productId"]).subscribe(data => {
+      this.onNoClick();
     }, error => console.log(error));
   }
 }

@@ -239,12 +239,13 @@ export class HomeScreenComponent implements OnInit {
 
   openProductDetails(selectedProductData): void {
     const dialogRef = this.dialog.open(ProductInfoDialog, {
-      width: '80%',
-      height: '80%',
+      width: '60%',
+      height: '70%',
       data: {product: selectedProductData}
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.getList();
       console.log('The dialog was closed');
     });
   }
